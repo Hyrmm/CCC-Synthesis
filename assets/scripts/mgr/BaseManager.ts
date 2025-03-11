@@ -1,4 +1,4 @@
-import Main from "./Main";
+import Main from "../Main";
 
 const { ccclass, property } = cc._decorator;
 

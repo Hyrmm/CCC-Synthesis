@@ -1,8 +1,8 @@
-import BagBlock from "./BagBlock";
+import { globalConfig } from "../common/Config";
+import BagBlock from "../item/BagBlock";
+import Shape from "../item/Shape";
+import { EnumBagBlockType, EnumBlockType, EnumShapeInWhere } from "../Main";
 import BaseManager from "./BaseManager";
-import { globalConfig } from "./Config";
-import { EnumBagBlockType, EnumBlockType, EnumShapeInWhere } from "./Main";
-import Shape from "./Shape";
 
 const { ccclass, property } = cc._decorator;
 

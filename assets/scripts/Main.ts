@@ -1,6 +1,5 @@
-import BagManager from "./BagManager";
-import Shape from "./Shape";
-import ShapeManager from "./ShapeManager";
+import BagManager from "./mgr/BagManager";
+import ShapeManager from "./mgr/ShapeManager";
 
 const { ccclass, property } = cc._decorator;
 

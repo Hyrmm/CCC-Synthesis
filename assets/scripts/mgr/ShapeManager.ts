@@ -1,8 +1,7 @@
+import { shapesConfig, globalConfig } from "../common/Config";
+import Shape from "../item/Shape";
+import { DragingShape, EnumShapeInWhere, EnumBlockType } from "../Main";
 import BaseManager from "./BaseManager";
-import { DragingShape, EnumBagBlockType, EnumBlockType, EnumShapeInWhere } from "./Main";
-import Shape from "./Shape";
-import { globalConfig, shapesConfig } from "./Config"
-import Utils from "./Utils";
 
 const { ccclass, property } = cc._decorator;
 

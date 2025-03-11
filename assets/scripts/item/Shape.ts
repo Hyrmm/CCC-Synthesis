@@ -1,6 +1,6 @@
-import { shapeType2BlockCnt } from "./Config";
-import { EnumShapeInWhere } from "./Main";
-import ShapeManager from "./ShapeManager";
+import { shapeType2BlockCnt } from "../common/Config";
+import { EnumShapeInWhere } from "../Main";
+import ShapeManager from "../mgr/ShapeManager";
 
 const { ccclass, property } = cc._decorator;
 

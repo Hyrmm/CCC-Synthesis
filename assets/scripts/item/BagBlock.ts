@@ -1,6 +1,7 @@
-import BagManager from "./BagManager";
-import { globalConfig } from "./Config";
-import { EnumBagBlockType } from "./Main";
+import BagManager from "../mgr/BagManager";
+import { globalConfig } from "../common/Config";
+import { EnumBagBlockType } from "../Main";
+
 
 const { ccclass, property } = cc._decorator;
 
