@@ -1,0 +1,1798 @@
+
+gongjian9_yellow.png
+size: 979,979
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bldcgs_huang_1_attack_1
+  rotate: true
+  xy: 428, 847
+  size: 66, 49
+  orig: 184, 184
+  offset: 50, 72
+  index: -1
+bldcgs_huang_1_attack_2
+  rotate: true
+  xy: 55, 258
+  size: 51, 64
+  orig: 184, 184
+  offset: 61, 72
+  index: -1
+bldcgs_huang_1_attack_3
+  rotate: false
+  xy: 70, 751
+  size: 38, 73
+  orig: 184, 184
+  offset: 66, 71
+  index: -1
+bldcgs_huang_1_attack_4
+  rotate: false
+  xy: 117, 835
+  size: 43, 74
+  orig: 184, 184
+  offset: 61, 70
+  index: -1
+bldcgs_huang_1_attack_5
+  rotate: false
+  xy: 103, 676
+  size: 42, 73
+  orig: 184, 184
+  offset: 62, 70
+  index: -1
+bldcgs_huang_1_attack_6
+  rotate: true
+  xy: 739, 918
+  size: 59, 69
+  orig: 184, 184
+  offset: 45, 71
+  index: -1
+bldcgs_huang_1_attack_7
+  rotate: false
+  xy: 110, 751
+  size: 41, 73
+  orig: 184, 184
+  offset: 63, 69
+  index: -1
+bldcgs_huang_1_attack_8
+  rotate: true
+  xy: 153, 751
+  size: 55, 52
+  orig: 184, 184
+  offset: 58, 73
+  index: -1
+bldcgs_huang_1_die_1
+  rotate: false
+  xy: 54, 208
+  size: 66, 48
+  orig: 184, 184
+  offset: 50, 73
+  index: -1
+bldcgs_huang_1_die_2
+  rotate: false
+  xy: 121, 258
+  size: 48, 63
+  orig: 184, 184
+  offset: 65, 69
+  index: -1
+bldcgs_huang_1_die_3
+  rotate: false
+  xy: 168, 324
+  size: 57, 65
+  orig: 184, 184
+  offset: 61, 66
+  index: -1
+bldcgs_huang_1_die_4
+  rotate: true
+  xy: 880, 917
+  size: 60, 67
+  orig: 184, 184
+  offset: 60, 63
+  index: -1
+bldcgs_huang_1_die_5
+  rotate: true
+  xy: 651, 858
+  size: 59, 65
+  orig: 184, 184
+  offset: 61, 67
+  index: -1
+bldcgs_huang_1_die_6
+  rotate: false
+  xy: 166, 391
+  size: 57, 60
+  orig: 184, 184
+  offset: 63, 69
+  index: -1
+bldcgs_huang_1_die_7
+  rotate: false
+  xy: 190, 128
+  size: 53, 61
+  orig: 184, 184
+  offset: 67, 67
+  index: -1
+bldcgs_huang_1_die_8
+  rotate: false
+  xy: 476, 721
+  size: 52, 56
+  orig: 184, 184
+  offset: 68, 66
+  index: -1
+bldcgs_huang_1_idle_1
+  rotate: true
+  xy: 192, 9
+  size: 66, 48
+  orig: 184, 184
+  offset: 50, 73
+  index: -1
+bldcgs_huang_1_idle_2
+  rotate: false
+  xy: 179, 552
+  size: 66, 48
+  orig: 184, 184
+  offset: 50, 73
+  index: -1
+bldcgs_huang_1_idle_3
+  rotate: true
+  xy: 245, 140
+  size: 66, 49
+  orig: 184, 184
+  offset: 50, 72
+  index: -1
+bldcgs_huang_1_idle_4
+  rotate: false
+  xy: 651, 806
+  size: 66, 50
+  orig: 184, 184
+  offset: 50, 71
+  index: -1
+bldcgs_huang_1_idle_5
+  rotate: false
+  xy: 651, 754
+  size: 66, 50
+  orig: 184, 184
+  offset: 50, 71
+  index: -1
+bldcgs_huang_1_idle_6
+  rotate: true
+  xy: 479, 846
+  size: 68, 49
+  orig: 184, 184
+  offset: 49, 72
+  index: -1
+bldcgs_huang_1_idle_7
+  rotate: true
+  xy: 929, 847
+  size: 68, 48
+  orig: 184, 184
+  offset: 49, 73
+  index: -1
+bldcgs_huang_1_idle_8
+  rotate: true
+  xy: 54, 522
+  size: 67, 48
+  orig: 184, 184
+  offset: 49, 73
+  index: -1
+bldcgs_huang_1_walk_1
+  rotate: false
+  xy: 719, 751
+  size: 66, 52
+  orig: 184, 184
+  offset: 51, 69
+  index: -1
+bldcgs_huang_1_walk_2
+  rotate: true
+  xy: 55, 311
+  size: 67, 52
+  orig: 184, 184
+  offset: 51, 68
+  index: -1
+bldcgs_huang_1_walk_3
+  rotate: true
+  xy: 213, 483
+  size: 67, 51
+  orig: 184, 184
+  offset: 51, 70
+  index: -1
+bldcgs_huang_1_walk_4
+  rotate: false
+  xy: 787, 752
+  size: 66, 51
+  orig: 184, 184
+  offset: 51, 70
+  index: -1
+bldcgs_huang_1_walk_5
+  rotate: true
+  xy: 225, 414
+  size: 67, 52
+  orig: 184, 184
+  offset: 50, 69
+  index: -1
+bldcgs_huang_1_walk_6
+  rotate: true
+  xy: 227, 345
+  size: 67, 53
+  orig: 184, 184
+  offset: 50, 68
+  index: -1
+bldcgs_huang_1_walk_7
+  rotate: true
+  xy: 229, 208
+  size: 67, 51
+  orig: 184, 184
+  offset: 50, 70
+  index: -1
+bldcgs_huang_1_walk_8
+  rotate: false
+  xy: 651, 701
+  size: 66, 51
+  orig: 184, 184
+  offset: 51, 70
+  index: -1
+bldcgs_huang_2_attack_1
+  rotate: true
+  xy: 171, 191
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_attack_2
+  rotate: true
+  xy: 247, 552
+  size: 55, 59
+  orig: 184, 184
+  offset: 69, 71
+  index: -1
+bldcgs_huang_2_attack_3
+  rotate: false
+  xy: 166, 453
+  size: 45, 70
+  orig: 184, 184
+  offset: 68, 71
+  index: -1
+bldcgs_huang_2_attack_4
+  rotate: true
+  xy: 858, 808
+  size: 52, 69
+  orig: 184, 184
+  offset: 63, 71
+  index: -1
+bldcgs_huang_2_attack_5
+  rotate: true
+  xy: 858, 862
+  size: 53, 69
+  orig: 184, 184
+  offset: 62, 71
+  index: -1
+bldcgs_huang_2_attack_6
+  rotate: false
+  xy: 2, 591
+  size: 51, 78
+  orig: 184, 184
+  offset: 59, 71
+  index: -1
+bldcgs_huang_2_attack_7
+  rotate: true
+  xy: 119, 148
+  size: 41, 69
+  orig: 184, 184
+  offset: 65, 71
+  index: -1
+bldcgs_huang_2_attack_8
+  rotate: false
+  xy: 537, 661
+  size: 55, 58
+  orig: 184, 184
+  offset: 64, 71
+  index: -1
+bldcgs_huang_2_die_1
+  rotate: false
+  xy: 348, 729
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_die_2
+  rotate: false
+  xy: 593, 920
+  size: 71, 57
+  orig: 184, 184
+  offset: 62, 70
+  index: -1
+bldcgs_huang_2_die_3
+  rotate: false
+  xy: 79, 911
+  size: 73, 66
+  orig: 184, 184
+  offset: 62, 65
+  index: -1
+bldcgs_huang_2_die_4
+  rotate: false
+  xy: 2, 903
+  size: 75, 74
+  orig: 184, 184
+  offset: 60, 60
+  index: -1
+bldcgs_huang_2_die_5
+  rotate: false
+  xy: 2, 826
+  size: 70, 75
+  orig: 184, 184
+  offset: 65, 60
+  index: -1
+bldcgs_huang_2_die_6
+  rotate: true
+  xy: 154, 913
+  size: 64, 70
+  orig: 184, 184
+  offset: 71, 60
+  index: -1
+bldcgs_huang_2_die_7
+  rotate: false
+  xy: 226, 917
+  size: 72, 60
+  orig: 184, 184
+  offset: 70, 60
+  index: -1
+bldcgs_huang_2_die_8
+  rotate: false
+  xy: 666, 919
+  size: 71, 58
+  orig: 184, 184
+  offset: 71, 60
+  index: -1
+bldcgs_huang_2_idle_1
+  rotate: false
+  xy: 547, 603
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_idle_2
+  rotate: false
+  xy: 569, 487
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_idle_3
+  rotate: false
+  xy: 607, 545
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_idle_4
+  rotate: false
+  xy: 634, 487
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_idle_5
+  rotate: true
+  xy: 242, 22
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_idle_6
+  rotate: false
+  xy: 362, 92
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_idle_7
+  rotate: true
+  xy: 537, 98
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_idle_8
+  rotate: true
+  xy: 420, 27
+  size: 63, 56
+  orig: 184, 184
+  offset: 56, 71
+  index: -1
+bldcgs_huang_2_walk_1
+  rotate: true
+  xy: 227, 277
+  size: 66, 53
+  orig: 184, 184
+  offset: 56, 73
+  index: -1
+bldcgs_huang_2_walk_2
+  rotate: true
+  xy: 171, 256
+  size: 66, 54
+  orig: 184, 184
+  offset: 56, 72
+  index: -1
+bldcgs_huang_2_walk_3
+  rotate: false
+  xy: 719, 805
+  size: 66, 54
+  orig: 184, 184
+  offset: 56, 72
+  index: -1
+bldcgs_huang_2_walk_4
+  rotate: false
+  xy: 719, 696
+  size: 65, 53
+  orig: 184, 184
+  offset: 56, 72
+  index: -1
+bldcgs_huang_2_walk_5
+  rotate: false
+  xy: 855, 751
+  size: 65, 55
+  orig: 184, 184
+  offset: 56, 70
+  index: -1
+bldcgs_huang_2_walk_6
+  rotate: true
+  xy: 239, 609
+  size: 65, 56
+  orig: 184, 184
+  offset: 56, 69
+  index: -1
+bldcgs_huang_2_walk_7
+  rotate: false
+  xy: 787, 805
+  size: 66, 54
+  orig: 184, 184
+  offset: 55, 72
+  index: -1
+bldcgs_huang_2_walk_8
+  rotate: true
+  xy: 266, 485
+  size: 65, 53
+  orig: 184, 184
+  offset: 56, 73
+  index: -1
+bldcgs_huang_3_attack_1
+  rotate: false
+  xy: 122, 191
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_attack_2
+  rotate: true
+  xy: 227, 783
+  size: 64, 58
+  orig: 184, 184
+  offset: 70, 70
+  index: -1
+bldcgs_huang_3_attack_3
+  rotate: false
+  xy: 105, 459
+  size: 59, 64
+  orig: 184, 184
+  offset: 65, 70
+  index: -1
+bldcgs_huang_3_attack_4
+  rotate: false
+  xy: 530, 850
+  size: 57, 68
+  orig: 184, 184
+  offset: 64, 70
+  index: -1
+bldcgs_huang_3_attack_5
+  rotate: true
+  xy: 810, 918
+  size: 59, 68
+  orig: 184, 184
+  offset: 63, 70
+  index: -1
+bldcgs_huang_3_attack_6
+  rotate: false
+  xy: 2, 671
+  size: 55, 78
+  orig: 184, 184
+  offset: 60, 70
+  index: -1
+bldcgs_huang_3_attack_7
+  rotate: true
+  xy: 221, 676
+  size: 54, 59
+  orig: 184, 184
+  offset: 62, 70
+  index: -1
+bldcgs_huang_3_attack_8
+  rotate: true
+  xy: 690, 326
+  size: 45, 58
+  orig: 184, 184
+  offset: 65, 70
+  index: -1
+bldcgs_huang_3_die_1
+  rotate: false
+  xy: 279, 418
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_die_2
+  rotate: false
+  xy: 718, 861
+  size: 68, 55
+  orig: 184, 184
+  offset: 61, 65
+  index: -1
+bldcgs_huang_3_die_3
+  rotate: false
+  xy: 162, 845
+  size: 63, 66
+  orig: 184, 184
+  offset: 65, 61
+  index: -1
+bldcgs_huang_3_die_4
+  rotate: false
+  xy: 2, 751
+  size: 66, 73
+  orig: 184, 184
+  offset: 60, 60
+  index: -1
+bldcgs_huang_3_die_5
+  rotate: true
+  xy: 374, 915
+  size: 62, 70
+  orig: 184, 184
+  offset: 64, 60
+  index: -1
+bldcgs_huang_3_die_6
+  rotate: false
+  xy: 629, 204
+  size: 51, 59
+  orig: 184, 184
+  offset: 75, 60
+  index: -1
+bldcgs_huang_3_die_7
+  rotate: true
+  xy: 2, 143
+  size: 72, 48
+  orig: 184, 184
+  offset: 73, 60
+  index: -1
+bldcgs_huang_3_die_8
+  rotate: true
+  xy: 147, 676
+  size: 73, 38
+  orig: 184, 184
+  offset: 74, 60
+  index: -1
+bldcgs_huang_3_idle_1
+  rotate: false
+  xy: 282, 351
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_idle_2
+  rotate: false
+  xy: 282, 284
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_idle_3
+  rotate: false
+  xy: 282, 217
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_idle_4
+  rotate: false
+  xy: 296, 150
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_idle_5
+  rotate: false
+  xy: 297, 609
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_idle_6
+  rotate: false
+  xy: 328, 418
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_idle_7
+  rotate: false
+  xy: 331, 351
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_idle_8
+  rotate: false
+  xy: 331, 284
+  size: 47, 65
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_walk_1
+  rotate: true
+  xy: 560, 329
+  size: 44, 63
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_walk_2
+  rotate: true
+  xy: 625, 326
+  size: 45, 63
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_walk_3
+  rotate: false
+  xy: 595, 98
+  size: 45, 63
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_walk_4
+  rotate: true
+  xy: 651, 654
+  size: 45, 64
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_walk_5
+  rotate: false
+  xy: 597, 33
+  size: 45, 63
+  orig: 184, 184
+  offset: 69, 65
+  index: -1
+bldcgs_huang_3_walk_6
+  rotate: false
+  xy: 642, 98
+  size: 45, 63
+  orig: 184, 184
+  offset: 69, 66
+  index: -1
+bldcgs_huang_3_walk_7
+  rotate: false
+  xy: 644, 33
+  size: 44, 63
+  orig: 184, 184
+  offset: 69, 66
+  index: -1
+bldcgs_huang_3_walk_8
+  rotate: false
+  xy: 750, 141
+  size: 44, 63
+  orig: 184, 184
+  offset: 69, 66
+  index: -1
+bldcgs_huang_4_attack_1
+  rotate: false
+  xy: 498, 295
+  size: 58, 62
+  orig: 184, 184
+  offset: 67, 64
+  index: -1
+bldcgs_huang_4_attack_2
+  rotate: false
+  xy: 52, 148
+  size: 65, 58
+  orig: 184, 184
+  offset: 68, 65
+  index: -1
+bldcgs_huang_4_attack_3
+  rotate: false
+  xy: 321, 485
+  size: 53, 65
+  orig: 184, 184
+  offset: 66, 68
+  index: -1
+bldcgs_huang_4_attack_4
+  rotate: false
+  xy: 104, 603
+  size: 48, 71
+  orig: 184, 184
+  offset: 67, 67
+  index: -1
+bldcgs_huang_4_attack_5
+  rotate: false
+  xy: 154, 603
+  size: 48, 71
+  orig: 184, 184
+  offset: 67, 67
+  index: -1
+bldcgs_huang_4_attack_6
+  rotate: true
+  xy: 788, 861
+  size: 55, 68
+  orig: 184, 184
+  offset: 61, 70
+  index: -1
+bldcgs_huang_4_attack_7
+  rotate: false
+  xy: 748, 27
+  size: 50, 47
+  orig: 184, 184
+  offset: 64, 74
+  index: -1
+bldcgs_huang_4_attack_8
+  rotate: false
+  xy: 725, 539
+  size: 44, 55
+  orig: 184, 184
+  offset: 66, 67
+  index: -1
+bldcgs_huang_4_die_1
+  rotate: false
+  xy: 300, 28
+  size: 58, 62
+  orig: 184, 184
+  offset: 67, 64
+  index: -1
+bldcgs_huang_4_die_2
+  rotate: true
+  xy: 221, 732
+  size: 49, 62
+  orig: 184, 184
+  offset: 61, 51
+  index: -1
+bldcgs_huang_4_die_3
+  rotate: false
+  xy: 2, 65
+  size: 44, 76
+  orig: 184, 184
+  offset: 65, 49
+  index: -1
+bldcgs_huang_4_die_4
+  rotate: false
+  xy: 59, 671
+  size: 42, 78
+  orig: 184, 184
+  offset: 64, 49
+  index: -1
+bldcgs_huang_4_die_5
+  rotate: false
+  xy: 55, 597
+  size: 47, 72
+  orig: 184, 184
+  offset: 64, 49
+  index: -1
+bldcgs_huang_4_die_6
+  rotate: false
+  xy: 589, 793
+  size: 60, 58
+  orig: 184, 184
+  offset: 64, 49
+  index: -1
+bldcgs_huang_4_die_7
+  rotate: true
+  xy: 2, 217
+  size: 71, 50
+  orig: 184, 184
+  offset: 64, 46
+  index: -1
+bldcgs_huang_4_die_8
+  rotate: true
+  xy: 2, 363
+  size: 72, 51
+  orig: 184, 184
+  offset: 64, 44
+  index: -1
+bldcgs_huang_4_idle_1
+  rotate: false
+  xy: 360, 28
+  size: 58, 62
+  orig: 184, 184
+  offset: 67, 64
+  index: -1
+bldcgs_huang_4_idle_2
+  rotate: true
+  xy: 472, 661
+  size: 58, 63
+  orig: 184, 184
+  offset: 67, 63
+  index: -1
+bldcgs_huang_4_idle_3
+  rotate: false
+  xy: 377, 423
+  size: 58, 63
+  orig: 184, 184
+  offset: 67, 63
+  index: -1
+bldcgs_huang_4_idle_4
+  rotate: true
+  xy: 438, 488
+  size: 58, 63
+  orig: 184, 184
+  offset: 67, 63
+  index: -1
+bldcgs_huang_4_idle_5
+  rotate: false
+  xy: 438, 295
+  size: 58, 63
+  orig: 184, 184
+  offset: 67, 63
+  index: -1
+bldcgs_huang_4_idle_6
+  rotate: false
+  xy: 477, 99
+  size: 58, 62
+  orig: 184, 184
+  offset: 67, 64
+  index: -1
+bldcgs_huang_4_idle_7
+  rotate: false
+  xy: 537, 34
+  size: 58, 62
+  orig: 184, 184
+  offset: 67, 64
+  index: -1
+bldcgs_huang_4_idle_8
+  rotate: false
+  xy: 558, 265
+  size: 58, 62
+  orig: 184, 184
+  offset: 67, 64
+  index: -1
+bldcgs_huang_4_walk_1
+  rotate: true
+  xy: 375, 552
+  size: 55, 64
+  orig: 184, 184
+  offset: 67, 62
+  index: -1
+bldcgs_huang_4_walk_2
+  rotate: false
+  xy: 380, 357
+  size: 55, 64
+  orig: 184, 184
+  offset: 67, 62
+  index: -1
+bldcgs_huang_4_walk_3
+  rotate: false
+  xy: 530, 783
+  size: 57, 65
+  orig: 184, 184
+  offset: 66, 62
+  index: -1
+bldcgs_huang_4_walk_4
+  rotate: false
+  xy: 331, 217
+  size: 56, 65
+  orig: 184, 184
+  offset: 67, 62
+  index: -1
+bldcgs_huang_4_walk_5
+  rotate: false
+  xy: 413, 661
+  size: 57, 65
+  orig: 184, 184
+  offset: 67, 62
+  index: -1
+bldcgs_huang_4_walk_6
+  rotate: false
+  xy: 380, 291
+  size: 56, 64
+  orig: 184, 184
+  offset: 67, 63
+  index: -1
+bldcgs_huang_4_walk_7
+  rotate: false
+  xy: 389, 225
+  size: 56, 64
+  orig: 184, 184
+  offset: 67, 63
+  index: -1
+bldcgs_huang_4_walk_8
+  rotate: false
+  xy: 922, 710
+  size: 55, 65
+  orig: 184, 184
+  offset: 67, 62
+  index: -1
+bldcgs_huang_5_attack_1
+  rotate: false
+  xy: 589, 732
+  size: 60, 59
+  orig: 184, 184
+  offset: 61, 63
+  index: -1
+bldcgs_huang_5_attack_2
+  rotate: true
+  xy: 2, 2
+  size: 61, 65
+  orig: 184, 184
+  offset: 55, 55
+  index: -1
+bldcgs_huang_5_attack_3
+  rotate: true
+  xy: 104, 525
+  size: 37, 70
+  orig: 184, 184
+  offset: 68, 62
+  index: -1
+bldcgs_huang_5_attack_4
+  rotate: false
+  xy: 204, 602
+  size: 33, 72
+  orig: 184, 184
+  offset: 72, 63
+  index: -1
+bldcgs_huang_5_attack_5
+  rotate: false
+  xy: 187, 676
+  size: 32, 73
+  orig: 184, 184
+  offset: 72, 62
+  index: -1
+bldcgs_huang_5_attack_6
+  rotate: false
+  xy: 672, 596
+  size: 43, 56
+  orig: 184, 184
+  offset: 72, 69
+  index: -1
+bldcgs_huang_5_attack_7
+  rotate: false
+  xy: 441, 556
+  size: 32, 51
+  orig: 184, 184
+  offset: 74, 70
+  index: -1
+bldcgs_huang_5_attack_8
+  rotate: true
+  xy: 748, 76
+  size: 63, 50
+  orig: 184, 184
+  offset: 57, 71
+  index: -1
+bldcgs_huang_5_die_1
+  rotate: false
+  xy: 618, 265
+  size: 60, 59
+  orig: 184, 184
+  offset: 61, 63
+  index: -1
+bldcgs_huang_5_die_2
+  rotate: false
+  xy: 345, 150
+  size: 46, 65
+  orig: 184, 184
+  offset: 67, 53
+  index: -1
+bldcgs_huang_5_die_3
+  rotate: true
+  xy: 413, 609
+  size: 50, 65
+  orig: 184, 184
+  offset: 64, 55
+  index: -1
+bldcgs_huang_5_die_4
+  rotate: false
+  xy: 54, 451
+  size: 49, 69
+  orig: 184, 184
+  offset: 64, 55
+  index: -1
+bldcgs_huang_5_die_5
+  rotate: true
+  xy: 915, 660
+  size: 48, 62
+  orig: 184, 184
+  offset: 64, 55
+  index: -1
+bldcgs_huang_5_die_6
+  rotate: true
+  xy: 783, 641
+  size: 50, 47
+  orig: 184, 184
+  offset: 64, 56
+  index: -1
+bldcgs_huang_5_die_7
+  rotate: false
+  xy: 830, 548
+  size: 52, 50
+  orig: 184, 184
+  offset: 64, 44
+  index: -1
+bldcgs_huang_5_die_8
+  rotate: false
+  xy: 692, 375
+  size: 52, 51
+  orig: 184, 184
+  offset: 64, 41
+  index: -1
+bldcgs_huang_5_idle_1
+  rotate: false
+  xy: 567, 204
+  size: 60, 59
+  orig: 184, 184
+  offset: 61, 63
+  index: -1
+bldcgs_huang_5_idle_2
+  rotate: false
+  xy: 680, 265
+  size: 60, 59
+  orig: 184, 184
+  offset: 61, 63
+  index: -1
+bldcgs_huang_5_idle_3
+  rotate: true
+  xy: 530, 721
+  size: 60, 57
+  orig: 184, 184
+  offset: 61, 64
+  index: -1
+bldcgs_huang_5_idle_4
+  rotate: false
+  xy: 682, 206
+  size: 60, 57
+  orig: 184, 184
+  offset: 61, 64
+  index: -1
+bldcgs_huang_5_idle_5
+  rotate: false
+  xy: 762, 480
+  size: 60, 57
+  orig: 184, 184
+  offset: 61, 64
+  index: -1
+bldcgs_huang_5_idle_6
+  rotate: false
+  xy: 756, 421
+  size: 60, 57
+  orig: 184, 184
+  offset: 61, 64
+  index: -1
+bldcgs_huang_5_idle_7
+  rotate: true
+  xy: 798, 268
+  size: 60, 57
+  orig: 184, 184
+  offset: 61, 64
+  index: -1
+bldcgs_huang_5_idle_8
+  rotate: false
+  xy: 915, 601
+  size: 60, 57
+  orig: 184, 184
+  offset: 61, 64
+  index: -1
+bldcgs_huang_5_walk_1
+  rotate: true
+  xy: 771, 539
+  size: 60, 57
+  orig: 184, 184
+  offset: 60, 65
+  index: -1
+bldcgs_huang_5_walk_2
+  rotate: true
+  xy: 48, 65
+  size: 61, 57
+  orig: 184, 184
+  offset: 59, 65
+  index: -1
+bldcgs_huang_5_walk_3
+  rotate: false
+  xy: 413, 728
+  size: 61, 57
+  orig: 184, 184
+  offset: 59, 65
+  index: -1
+bldcgs_huang_5_walk_4
+  rotate: true
+  xy: 478, 36
+  size: 61, 57
+  orig: 184, 184
+  offset: 59, 65
+  index: -1
+bldcgs_huang_5_walk_5
+  rotate: true
+  xy: 690, 37
+  size: 61, 56
+  orig: 184, 184
+  offset: 60, 65
+  index: -1
+bldcgs_huang_5_walk_6
+  rotate: false
+  xy: 852, 693
+  size: 61, 56
+  orig: 184, 184
+  offset: 60, 65
+  index: -1
+bldcgs_huang_5_walk_7
+  rotate: true
+  xy: 689, 100
+  size: 61, 57
+  orig: 184, 184
+  offset: 60, 65
+  index: -1
+bldcgs_huang_5_walk_8
+  rotate: false
+  xy: 699, 480
+  size: 61, 57
+  orig: 184, 184
+  offset: 60, 65
+  index: -1
+bldcgs_huang_6_attack_1
+  rotate: false
+  xy: 393, 159
+  size: 56, 64
+  orig: 184, 184
+  offset: 59, 57
+  index: -1
+bldcgs_huang_6_attack_2
+  rotate: false
+  xy: 294, 852
+  size: 65, 63
+  orig: 184, 184
+  offset: 43, 56
+  index: -1
+bldcgs_huang_6_attack_3
+  rotate: true
+  xy: 717, 641
+  size: 53, 64
+  orig: 184, 184
+  offset: 55, 68
+  index: -1
+bldcgs_huang_6_attack_4
+  rotate: true
+  xy: 282, 676
+  size: 54, 62
+  orig: 184, 184
+  offset: 55, 70
+  index: -1
+bldcgs_huang_6_attack_5
+  rotate: true
+  xy: 627, 373
+  size: 53, 63
+  orig: 184, 184
+  offset: 56, 70
+  index: -1
+bldcgs_huang_6_attack_6
+  rotate: true
+  xy: 717, 596
+  size: 43, 51
+  orig: 184, 184
+  offset: 67, 70
+  index: -1
+bldcgs_huang_6_attack_7
+  rotate: false
+  xy: 884, 547
+  size: 51, 51
+  orig: 184, 184
+  offset: 58, 69
+  index: -1
+bldcgs_huang_6_attack_8
+  rotate: false
+  xy: 787, 699
+  size: 63, 51
+  orig: 184, 184
+  offset: 51, 69
+  index: -1
+bldcgs_huang_6_die_1
+  rotate: true
+  xy: 475, 548
+  size: 56, 64
+  orig: 184, 184
+  offset: 59, 57
+  index: -1
+bldcgs_huang_6_die_2
+  rotate: true
+  xy: 929, 777
+  size: 68, 48
+  orig: 184, 184
+  offset: 50, 70
+  index: -1
+bldcgs_huang_6_die_3
+  rotate: false
+  xy: 169, 77
+  size: 68, 49
+  orig: 184, 184
+  offset: 49, 70
+  index: -1
+bldcgs_huang_6_die_4
+  rotate: true
+  xy: 55, 380
+  size: 69, 52
+  orig: 184, 184
+  offset: 49, 70
+  index: -1
+bldcgs_huang_6_die_5
+  rotate: true
+  xy: 447, 229
+  size: 64, 50
+  orig: 184, 184
+  offset: 49, 68
+  index: -1
+bldcgs_huang_6_die_6
+  rotate: false
+  xy: 685, 163
+  size: 63, 41
+  orig: 184, 184
+  offset: 49, 63
+  index: -1
+bldcgs_huang_6_die_7
+  rotate: true
+  xy: 2, 513
+  size: 76, 50
+  orig: 184, 184
+  offset: 37, 49
+  index: -1
+bldcgs_huang_6_die_8
+  rotate: true
+  xy: 2, 290
+  size: 71, 51
+  orig: 184, 184
+  offset: 42, 48
+  index: -1
+bldcgs_huang_6_idle_1
+  rotate: true
+  xy: 541, 545
+  size: 56, 64
+  orig: 184, 184
+  offset: 59, 57
+  index: -1
+bldcgs_huang_6_idle_2
+  rotate: false
+  xy: 451, 163
+  size: 56, 64
+  orig: 184, 184
+  offset: 58, 57
+  index: -1
+bldcgs_huang_6_idle_3
+  rotate: true
+  xy: 503, 487
+  size: 56, 64
+  orig: 184, 184
+  offset: 58, 57
+  index: -1
+bldcgs_huang_6_idle_4
+  rotate: false
+  xy: 509, 163
+  size: 56, 64
+  orig: 184, 184
+  offset: 58, 57
+  index: -1
+bldcgs_huang_6_idle_5
+  rotate: true
+  xy: 296, 92
+  size: 56, 64
+  orig: 184, 184
+  offset: 58, 57
+  index: -1
+bldcgs_huang_6_idle_6
+  rotate: false
+  xy: 499, 229
+  size: 57, 64
+  orig: 184, 184
+  offset: 58, 57
+  index: -1
+bldcgs_huang_6_idle_7
+  rotate: true
+  xy: 561, 428
+  size: 57, 64
+  orig: 184, 184
+  offset: 58, 57
+  index: -1
+bldcgs_huang_6_idle_8
+  rotate: true
+  xy: 627, 428
+  size: 57, 64
+  orig: 184, 184
+  offset: 58, 57
+  index: -1
+bldcgs_huang_6_walk_1
+  rotate: false
+  xy: 376, 488
+  size: 60, 62
+  orig: 184, 184
+  offset: 55, 59
+  index: -1
+bldcgs_huang_6_walk_2
+  rotate: false
+  xy: 437, 424
+  size: 60, 62
+  orig: 184, 184
+  offset: 55, 59
+  index: -1
+bldcgs_huang_6_walk_3
+  rotate: false
+  xy: 107, 83
+  size: 60, 63
+  orig: 184, 184
+  offset: 55, 59
+  index: -1
+bldcgs_huang_6_walk_4
+  rotate: false
+  xy: 130, 12
+  size: 60, 63
+  orig: 184, 184
+  offset: 55, 58
+  index: -1
+bldcgs_huang_6_walk_5
+  rotate: false
+  xy: 347, 787
+  size: 60, 63
+  orig: 184, 184
+  offset: 55, 58
+  index: -1
+bldcgs_huang_6_walk_6
+  rotate: false
+  xy: 499, 359
+  size: 59, 62
+  orig: 184, 184
+  offset: 56, 58
+  index: -1
+bldcgs_huang_6_walk_7
+  rotate: false
+  xy: 437, 360
+  size: 60, 62
+  orig: 184, 184
+  offset: 56, 59
+  index: -1
+bldcgs_huang_6_walk_8
+  rotate: false
+  xy: 499, 423
+  size: 60, 62
+  orig: 184, 184
+  offset: 55, 59
+  index: -1
+bldcgs_huang_7_attack_1
+  rotate: false
+  xy: 937, 542
+  size: 40, 57
+  orig: 184, 184
+  offset: 65, 64
+  index: -1
+bldcgs_huang_7_attack_2
+  rotate: false
+  xy: 227, 849
+  size: 65, 66
+  orig: 184, 184
+  offset: 41, 66
+  index: -1
+bldcgs_huang_7_attack_3
+  rotate: false
+  xy: 361, 852
+  size: 65, 61
+  orig: 184, 184
+  offset: 42, 72
+  index: -1
+bldcgs_huang_7_attack_4
+  rotate: false
+  xy: 346, 669
+  size: 65, 58
+  orig: 184, 184
+  offset: 44, 73
+  index: -1
+bldcgs_huang_7_attack_5
+  rotate: true
+  xy: 287, 783
+  size: 64, 58
+  orig: 184, 184
+  offset: 45, 73
+  index: -1
+bldcgs_huang_7_attack_6
+  rotate: false
+  xy: 746, 374
+  size: 57, 45
+  orig: 184, 184
+  offset: 54, 73
+  index: -1
+bldcgs_huang_7_attack_7
+  rotate: true
+  xy: 476, 779
+  size: 65, 52
+  orig: 184, 184
+  offset: 48, 71
+  index: -1
+bldcgs_huang_7_attack_8
+  rotate: false
+  xy: 427, 93
+  size: 48, 64
+  orig: 184, 184
+  offset: 60, 62
+  index: -1
+bldcgs_huang_7_die_1
+  rotate: false
+  xy: 818, 421
+  size: 40, 57
+  orig: 184, 184
+  offset: 65, 64
+  index: -1
+bldcgs_huang_7_die_2
+  rotate: false
+  xy: 693, 428
+  size: 61, 50
+  orig: 184, 184
+  offset: 52, 66
+  index: -1
+bldcgs_huang_7_die_3
+  rotate: true
+  xy: 742, 266
+  size: 58, 54
+  orig: 184, 184
+  offset: 56, 66
+  index: -1
+bldcgs_huang_7_die_4
+  rotate: false
+  xy: 285, 732
+  size: 61, 49
+  orig: 184, 184
+  offset: 58, 70
+  index: -1
+bldcgs_huang_7_die_5
+  rotate: false
+  xy: 857, 644
+  size: 56, 47
+  orig: 184, 184
+  offset: 58, 71
+  index: -1
+bldcgs_huang_7_die_6
+  rotate: true
+  xy: 744, 206
+  size: 58, 47
+  orig: 184, 184
+  offset: 49, 67
+  index: -1
+bldcgs_huang_7_die_7
+  rotate: true
+  xy: 74, 826
+  size: 75, 41
+  orig: 184, 184
+  offset: 35, 62
+  index: -1
+bldcgs_huang_7_die_8
+  rotate: false
+  xy: 104, 564
+  size: 73, 37
+  orig: 184, 184
+  offset: 37, 62
+  index: -1
+bldcgs_huang_7_idle_1
+  rotate: false
+  xy: 824, 480
+  size: 40, 57
+  orig: 184, 184
+  offset: 65, 64
+  index: -1
+bldcgs_huang_7_idle_2
+  rotate: true
+  xy: 770, 601
+  size: 38, 57
+  orig: 184, 184
+  offset: 66, 64
+  index: -1
+bldcgs_huang_7_idle_3
+  rotate: true
+  xy: 567, 163
+  size: 39, 57
+  orig: 184, 184
+  offset: 66, 64
+  index: -1
+bldcgs_huang_7_idle_4
+  rotate: false
+  xy: 860, 421
+  size: 40, 57
+  orig: 184, 184
+  offset: 66, 64
+  index: -1
+bldcgs_huang_7_idle_5
+  rotate: false
+  xy: 923, 380
+  size: 40, 57
+  orig: 184, 184
+  offset: 66, 64
+  index: -1
+bldcgs_huang_7_idle_6
+  rotate: true
+  xy: 626, 163
+  size: 39, 57
+  orig: 184, 184
+  offset: 66, 64
+  index: -1
+bldcgs_huang_7_idle_7
+  rotate: false
+  xy: 924, 321
+  size: 40, 57
+  orig: 184, 184
+  offset: 65, 64
+  index: -1
+bldcgs_huang_7_idle_8
+  rotate: true
+  xy: 857, 250
+  size: 40, 57
+  orig: 184, 184
+  offset: 65, 64
+  index: -1
+bldcgs_huang_7_walk_1
+  rotate: true
+  xy: 750, 330
+  size: 42, 56
+  orig: 184, 184
+  offset: 67, 65
+  index: -1
+bldcgs_huang_7_walk_2
+  rotate: true
+  xy: 857, 600
+  size: 42, 56
+  orig: 184, 184
+  offset: 67, 65
+  index: -1
+bldcgs_huang_7_walk_3
+  rotate: true
+  xy: 805, 377
+  size: 42, 57
+  orig: 184, 184
+  offset: 67, 65
+  index: -1
+bldcgs_huang_7_walk_4
+  rotate: true
+  xy: 808, 333
+  size: 42, 56
+  orig: 184, 184
+  offset: 67, 65
+  index: -1
+bldcgs_huang_7_walk_5
+  rotate: true
+  xy: 864, 378
+  size: 41, 57
+  orig: 184, 184
+  offset: 68, 64
+  index: -1
+bldcgs_huang_7_walk_6
+  rotate: true
+  xy: 866, 335
+  size: 41, 56
+  orig: 184, 184
+  offset: 68, 64
+  index: -1
+bldcgs_huang_7_walk_7
+  rotate: true
+  xy: 866, 292
+  size: 41, 56
+  orig: 184, 184
+  offset: 67, 64
+  index: -1
+bldcgs_huang_7_walk_8
+  rotate: true
+  xy: 798, 225
+  size: 41, 57
+  orig: 184, 184
+  offset: 67, 64
+  index: -1
+bldcgs_huang_8_attack_1
+  rotate: false
+  xy: 245, 87
+  size: 49, 51
+  orig: 184, 184
+  offset: 56, 70
+  index: -1
+bldcgs_huang_8_attack_2
+  rotate: true
+  xy: 446, 916
+  size: 61, 70
+  orig: 184, 184
+  offset: 42, 70
+  index: -1
+bldcgs_huang_8_attack_3
+  rotate: true
+  xy: 346, 609
+  size: 58, 65
+  orig: 184, 184
+  offset: 47, 70
+  index: -1
+bldcgs_huang_8_attack_4
+  rotate: false
+  xy: 109, 391
+  size: 55, 66
+  orig: 184, 184
+  offset: 49, 70
+  index: -1
+bldcgs_huang_8_attack_5
+  rotate: true
+  xy: 308, 552
+  size: 55, 65
+  orig: 184, 184
+  offset: 49, 70
+  index: -1
+bldcgs_huang_8_attack_6
+  rotate: true
+  xy: 109, 323
+  size: 66, 57
+  orig: 184, 184
+  offset: 45, 70
+  index: -1
+bldcgs_huang_8_attack_7
+  rotate: false
+  xy: 589, 853
+  size: 60, 65
+  orig: 184, 184
+  offset: 51, 70
+  index: -1
+bldcgs_huang_8_attack_8
+  rotate: true
+  xy: 561, 375
+  size: 51, 64
+  orig: 184, 184
+  offset: 58, 66
+  index: -1
+bldcgs_huang_8_die_1
+  rotate: true
+  xy: 672, 545
+  size: 49, 51
+  orig: 184, 184
+  offset: 56, 70
+  index: -1
+bldcgs_huang_8_die_2
+  rotate: true
+  xy: 480, 606
+  size: 53, 65
+  orig: 184, 184
+  offset: 59, 62
+  index: -1
+bldcgs_huang_8_die_3
+  rotate: false
+  xy: 594, 666
+  size: 55, 64
+  orig: 184, 184
+  offset: 60, 63
+  index: -1
+bldcgs_huang_8_die_4
+  rotate: true
+  xy: 69, 2
+  size: 61, 59
+  orig: 184, 184
+  offset: 58, 64
+  index: -1
+bldcgs_huang_8_die_5
+  rotate: false
+  xy: 409, 787
+  size: 65, 58
+  orig: 184, 184
+  offset: 55, 66
+  index: -1
+bldcgs_huang_8_die_6
+  rotate: false
+  xy: 518, 920
+  size: 73, 57
+  orig: 184, 184
+  offset: 47, 65
+  index: -1
+bldcgs_huang_8_die_7
+  rotate: false
+  xy: 300, 917
+  size: 72, 60
+  orig: 184, 184
+  offset: 48, 65
+  index: -1
+bldcgs_huang_8_die_8
+  rotate: true
+  xy: 2, 437
+  size: 74, 50
+  orig: 184, 184
+  offset: 46, 64
+  index: -1
+bldcgs_huang_8_idle_1
+  rotate: false
+  xy: 902, 439
+  size: 49, 51
+  orig: 184, 184
+  offset: 56, 70
+  index: -1
+bldcgs_huang_8_idle_2
+  rotate: false
+  xy: 924, 268
+  size: 48, 51
+  orig: 184, 184
+  offset: 57, 70
+  index: -1
+bldcgs_huang_8_idle_3
+  rotate: false
+  xy: 800, 65
+  size: 48, 51
+  orig: 184, 184
+  offset: 57, 70
+  index: -1
+bldcgs_huang_8_idle_4
+  rotate: false
+  xy: 850, 99
+  size: 48, 51
+  orig: 184, 184
+  offset: 57, 70
+  index: -1
+bldcgs_huang_8_idle_5
+  rotate: true
+  xy: 917, 492
+  size: 48, 52
+  orig: 184, 184
+  offset: 57, 69
+  index: -1
+bldcgs_huang_8_idle_6
+  rotate: false
+  xy: 796, 171
+  size: 48, 52
+  orig: 184, 184
+  offset: 57, 69
+  index: -1
+bldcgs_huang_8_idle_7
+  rotate: false
+  xy: 800, 12
+  size: 48, 51
+  orig: 184, 184
+  offset: 57, 70
+  index: -1
+bldcgs_huang_8_idle_8
+  rotate: false
+  xy: 850, 46
+  size: 49, 51
+  orig: 184, 184
+  offset: 56, 70
+  index: -1
+bldcgs_huang_8_walk_1
+  rotate: true
+  xy: 857, 201
+  size: 47, 52
+  orig: 184, 184
+  offset: 60, 69
+  index: -1
+bldcgs_huang_8_walk_2
+  rotate: true
+  xy: 846, 152
+  size: 47, 52
+  orig: 184, 184
+  offset: 60, 69
+  index: -1
+bldcgs_huang_8_walk_3
+  rotate: true
+  xy: 916, 218
+  size: 48, 52
+  orig: 184, 184
+  offset: 60, 69
+  index: -1
+bldcgs_huang_8_walk_4
+  rotate: true
+  xy: 612, 603
+  size: 49, 52
+  orig: 184, 184
+  offset: 59, 69
+  index: -1
+bldcgs_huang_8_walk_5
+  rotate: false
+  xy: 866, 493
+  size: 49, 52
+  orig: 184, 184
+  offset: 59, 69
+  index: -1
+bldcgs_huang_8_walk_6
+  rotate: false
+  xy: 901, 65
+  size: 49, 51
+  orig: 184, 184
+  offset: 59, 69
+  index: -1
+bldcgs_huang_8_walk_7
+  rotate: true
+  xy: 911, 168
+  size: 48, 52
+  orig: 184, 184
+  offset: 60, 69
+  index: -1
+bldcgs_huang_8_walk_8
+  rotate: true
+  xy: 900, 118
+  size: 48, 52
+  orig: 184, 184
+  offset: 60, 69
+  index: -1
