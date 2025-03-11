@@ -27,6 +27,14 @@ export default class BagManager extends BaseManager {
         this.defalueSize = globalConfig.bagDefalueSize
 
         this.initBagBlocks()
+
+        this.node.getComponent(cc.Widget).top = this.maxSize[1] / 2 * 60
+
+        this.scheduleOnce(() => {
+
+            const position = this.node.position.clone()
+            cc.tween(this.node).to(0.5, { scale: 0.6, position: cc.v3(-(320 - this.maxSize[0] / 2 * 60 * 0.6), position.y, 0) }).start()
+        }, 2)
     }
 
     private initBagBlocks() {
