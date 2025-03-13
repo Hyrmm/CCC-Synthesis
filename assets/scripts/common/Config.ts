@@ -1,26 +1,27 @@
 
-type ShapeConfig = {
+export type ShapeConfig = {
+    id?: number
     blockType: number
     shapeType: number
+    spOffset: [number, number]
 }
 
 export const shapesConfig: Array<ShapeConfig> = [
-    { blockType: 0, shapeType: 0 },
-    { blockType: 0, shapeType: 1 },
-    { blockType: 0, shapeType: 2 },
-    { blockType: 0, shapeType: 3 },
-    { blockType: 0, shapeType: 4 },
-    { blockType: 0, shapeType: 5 },
-    { blockType: 0, shapeType: 6 },
-    { blockType: 1, shapeType: 0 },
-    { blockType: 2, shapeType: 1 },
-    { blockType: 1, shapeType: 0 },
-    { blockType: 2, shapeType: 1 },
-    // { blockType: 1, shapeType: 2},
-    // { blockType: 1, shapeType: 3},
-    // { blockType: 1, shapeType: 4},
-    // { blockType: 1, shapeType: 5},
-    // { blockType: 1, shapeType: 6},
+    { blockType: 0, shapeType: 0, spOffset: [0, 0] },
+    { blockType: 0, shapeType: 1, spOffset: [0, 0] },
+    { blockType: 0, shapeType: 5, spOffset: [0, 0] },
+    { blockType: 0, shapeType: 3, spOffset: [0, 0] },
+    { blockType: 0, shapeType: 6, spOffset: [0, 0] },
+    { blockType: 1, shapeType: 0, spOffset: [35, 57] },
+    { blockType: 2, shapeType: 1, spOffset: [35, 50] },
+    { blockType: 3, shapeType: 5, spOffset: [41, 56] },
+    { blockType: 4, shapeType: 3, spOffset: [85, 74] },
+    { blockType: 5, shapeType: 6, spOffset: [52, 48] },
+    { blockType: 1, shapeType: 0, spOffset: [35, 57] },
+    { blockType: 2, shapeType: 1, spOffset: [35, 50] },
+    { blockType: 3, shapeType: 5, spOffset: [41, 56] },
+    { blockType: 4, shapeType: 3, spOffset: [85, 74] },
+    { blockType: 5, shapeType: 6, spOffset: [52, 48] },
 ]
 
 export const shapeType2BlockCnt = {
@@ -37,7 +38,7 @@ export const globalConfig = {
     spacing: 5,
     blockSize: 60,
     shapeSize: 70,
-    bagMaxSize: [8, 10],
+    bagMaxSize: [6, 6],
     bagDefalueSize: [4, 4],
 }
 

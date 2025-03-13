@@ -1,7 +1,7 @@
 import { globalConfig } from "../common/Config";
 import BagBlock from "../item/BagBlock";
 import Shape from "../item/Shape";
-import { EnumBagBlockType, EnumBlockType, EnumShapeInWhere } from "../Main";
+import Main, { EnumBagBlockType, EnumBlockType, EnumShapeInWhere } from "../Main";
 import BaseManager from "./BaseManager";
 
 const { ccclass, property } = cc._decorator;
@@ -20,8 +20,21 @@ export default class BagManager extends BaseManager {
     private maxSize: number[] = []
     private defalueSize: number[] = []
 
-    start() {
-        super.start()
+    // start() {
+    //     super.start()
+
+
+
+    //     // this.scheduleOnce(() => {
+
+    //     //     const position = this.node.position.clone()
+    //     //     cc.tween(this.node).to(0.5, { scale: 0.6, position: cc.v3(-(320 - this.maxSize[0] / 2 * 60 * 0.6), position.y, 0) }).start()
+    //     // }, 2)
+    // }
+
+    init(owner: Main): void {
+
+        super.init(owner)
 
         this.maxSize = globalConfig.bagMaxSize
         this.defalueSize = globalConfig.bagDefalueSize
@@ -29,12 +42,6 @@ export default class BagManager extends BaseManager {
         this.initBagBlocks()
 
         this.node.getComponent(cc.Widget).top = this.maxSize[1] / 2 * 60
-
-        this.scheduleOnce(() => {
-
-            const position = this.node.position.clone()
-            cc.tween(this.node).to(0.5, { scale: 0.6, position: cc.v3(-(320 - this.maxSize[0] / 2 * 60 * 0.6), position.y, 0) }).start()
-        }, 2)
     }
 
     private initBagBlocks() {
@@ -90,7 +97,6 @@ export default class BagManager extends BaseManager {
             if (bagBlockComp.type == EnumBagBlockType.HasBlock && !this.bagBlockName2Collision.has(self.node.name)) this.bagBlockName2Collision.set(self.node.name, self.node)
         }
 
-
         this.node.children.forEach((child) => child.children[0].color = cc.Color.WHITE)
 
         let color = cc.Color.RED
@@ -105,7 +111,13 @@ export default class BagManager extends BaseManager {
             color = cc.Color.GREEN
         }
 
-        this.bagBlockName2Collision.forEach((value, key) => value.children[0].color = color)
+        this.bagBlockName2Collision.forEach((value, key) => {
+            if (this.bagBlockName2InPlaceShape.has(key)) {
+                value.children[0].color = cc.Color.YELLOW
+            } else {
+                value.children[0].color = color
+            }
+        })
     }
 
     public onCollisionExit(other: cc.Collider, self: cc.Collider) {
@@ -121,7 +133,13 @@ export default class BagManager extends BaseManager {
             color = cc.Color.GREEN
         }
 
-        this.bagBlockName2Collision.forEach((value, key) => value.children[0].color = color)
+        this.bagBlockName2Collision.forEach((value, key) => {
+            if (this.bagBlockName2InPlaceShape.has(key)) {
+                value.children[0].color = cc.Color.YELLOW
+            } else {
+                value.children[0].color = color
+            }
+        })
     }
 
     public dropShape(): { result: boolean, placeWorldPos: cc.Vec3, intersect: number } {
@@ -191,9 +209,27 @@ export default class BagManager extends BaseManager {
 
     }
 
+    public getBlockPosByInPlaceShapeId(shapeId: number): Array<number[]> {
+        const result = []
+        for (const [key, shape] of this.bagBlockName2InPlaceShape) {
+            if (shapeId == shape.id) {
+                result.push(key.split('_'))
+            }
+        }
+        return result
+    }
+
     public setBlockEmptyByShapeId(shapeId: number) {
         const bagBlocks = this.getBagBlocksByShapeId(shapeId)
         this.shapeId2InPlaceShape.delete(shapeId)
         bagBlocks.forEach((bagBlock) => this.bagBlockName2InPlaceShape.delete(bagBlock.node.name))
     }
+
+    public setBlockInPlaceShapeByPos(pos: number[], shape: Shape) {
+        const [row, col] = pos
+        const bagBlock = this.bagBlocks[row][col]
+        this.shapeId2InPlaceShape.set(shape.id, shape)
+        this.bagBlockName2InPlaceShape.set(bagBlock.node.name, shape)
+    }
+
 }

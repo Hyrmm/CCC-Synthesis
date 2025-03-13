@@ -1,6 +1,6 @@
 import { shapesConfig, globalConfig } from "../common/Config";
 import Shape from "../item/Shape";
-import { DragingShape, EnumShapeInWhere, EnumBlockType } from "../Main";
+import Main, { DragingShape, EnumShapeInWhere, EnumBlockType } from "../Main";
 import BaseManager from "./BaseManager";
 
 const { ccclass, property } = cc._decorator;
@@ -20,25 +20,24 @@ export default class ShapeManager extends BaseManager {
     @property(cc.Node)
     panel_inplace: cc.Node = null
 
-    public draggingShape: DragingShape = { target: null, targetCopy: null, originalPos: null }
+    public draggingShape: DragingShape = { target: null, targetCopy: null, originalPos: null, originalCollionPos: null }
+    public shapeList: Map<number, Shape> = new Map()
+
 
     private shape2ShapeCollision: Map<Shape, Shape[]> = new Map()
     private shape2ShapeListCollision: Map<Shape, cc.Collider> = new Map()
     private shapeType2ShapePool: Map<number, cc.NodePool> = new Map()
 
-    start() {
+    init(owner: Main): void {
 
-        super.start()
-
-        for (const [id, shapes] of shapesConfig.entries()) {
-            this.addShapeInList(id, shapes.blockType, shapes.shapeType)
-        }
+        super.init(owner)
 
         this.panel_scrollView.getComponent(cc.BoxCollider)['onCollisionExit'] = this.onShapeListCollisionExit.bind(this)
         this.panel_scrollView.getComponent(cc.BoxCollider)['onCollisionStay'] = this.onShapeListCollisionStay.bind(this)
     }
 
     update(dt: number): void {
+
         const shapeListCollider = this.panel_scrollView.getComponent(cc.BoxCollider)
 
         shapeListCollider.size.width = Math.max(this.panel_list.width, 640)
@@ -59,7 +58,17 @@ export default class ShapeManager extends BaseManager {
         shape.parent = this.panel_list
 
         if (shape.anchorY == 1) shape.position = cc.v3(shape.position.x, shape.height, 0)
+
+        this.shapeList.set(id, shape.getComponent(Shape))
     }
+
+    public delShapeInListAll() {
+        this.shapeList.forEach((shape) => {
+            if (shape.where = EnumShapeInWhere.InList) this.shapeList.delete(shape.id)
+            this.shapeType2ShapePool.get(shape.shapeType).put(shape.node)
+        })
+    }
+
 
     public onShapeTouchBegan(event: cc.Event.EventTouch) {
 
@@ -89,6 +98,7 @@ export default class ShapeManager extends BaseManager {
             this.panel_scrollView.getComponent(cc.ScrollView).enabled = false
             this.draggingShape.targetCopy = copyTarget
         } else {
+            this.draggingShape.originalCollionPos = this.owner.bagManager.getBlockPosByInPlaceShapeId(shapeComp.id)
             this.owner.bagManager.setBlockEmptyByShapeId(shapeComp.id)
         }
 
@@ -130,14 +140,13 @@ export default class ShapeManager extends BaseManager {
         const shapeComp = this.draggingShape.target.getComponent(Shape)
         const [shapeType, blockType] = [shapeComp.shapeType, shapeComp.blockType]
 
-        if (!dropResult.result) {
 
+        if (!dropResult.result) {
             if (shapeComp.where === EnumShapeInWhere.InPlace) {
 
                 const shapeComp = this.draggingShape.target.getComponent(Shape)
 
                 if (dropResult.intersect <= 0) {
-
 
                     // 计算是否参与合成
                     let canUpgradedShape: Shape = null
@@ -151,22 +160,32 @@ export default class ShapeManager extends BaseManager {
                     if (canUpgradedShape) {
                         canUpgradedShape.upgradeLevel()
                         this.shapeType2ShapePool.get(shapeType).put(this.draggingShape.target)
+                        this.shapeList.delete(shapeComp.id)
                     } else if (this.shape2ShapeListCollision.size > 0) {
                         shapeComp.reset(shapeComp.id, shapeComp.lv, [blockType, shapeType], EnumShapeInWhere.InList)
                         this.draggingShape.target.parent = this.panel_list
                         const posY = this.draggingShape.target.anchorY == 1 ? this.draggingShape.target.height : 0
                         this.draggingShape.target.position = new cc.Vec3(0, posY, 0)
                     } else {
+
+                        for (const collionPos of this.draggingShape.originalCollionPos) {
+                            this.owner.bagManager.setBlockInPlaceShapeByPos(collionPos, shapeComp)
+                        }
+
                         this.draggingShape.target.position = this.draggingShape.originalPos
                     }
 
 
                 } else {
+
+                    for (const collionPos of this.draggingShape.originalCollionPos) {
+                        this.owner.bagManager.setBlockInPlaceShapeByPos(collionPos, shapeComp)
+                    }
+
                     this.draggingShape.target.position = this.draggingShape.originalPos
                 }
 
             } else {
-
 
                 // 计算是否参与合成
                 let canUpgradedShape = null
@@ -180,15 +199,12 @@ export default class ShapeManager extends BaseManager {
                 if (canUpgradedShape) {
                     canUpgradedShape.upgradeLevel()
                     this.shapeType2ShapePool.get(shapeType).put(this.draggingShape.target)
+                    this.shapeList.delete(shapeComp.id)
                 }
 
                 this.draggingShape.target.opacity = 255
                 this.shapeType2ShapePool.get(shapeType).put(this.draggingShape.targetCopy)
             }
-
-            this.draggingShape.target = null
-            this.draggingShape.targetCopy = null
-            this.draggingShape.originalPos = null
         } else {
 
             if (shapeComp.blockType == EnumBlockType.Block) {
@@ -210,6 +226,10 @@ export default class ShapeManager extends BaseManager {
                 target.position = new cc.Vec3(posX, posY, 0)
             }
         }
+
+        this.draggingShape.target = null
+        this.draggingShape.targetCopy = null
+        this.draggingShape.originalPos = null
 
         this.panel_scrollView.getComponent(cc.ScrollView).enabled = true
     }
@@ -239,8 +259,6 @@ export default class ShapeManager extends BaseManager {
         if (!this.shape2ShapeCollision.has(shapeComp)) return
         if (!this.shape2ShapeCollision.get(shapeComp).includes(otherShapeComp)) return
         this.shape2ShapeCollision.get(shapeComp).splice(this.shape2ShapeCollision.get(shapeComp).indexOf(otherShapeComp), 1)
-
-        console.log(this.shape2ShapeCollision)
     }
 
     public onShapeCollisionStay(other: cc.Collider, self: cc.Collider) {
@@ -252,12 +270,9 @@ export default class ShapeManager extends BaseManager {
         if (!shapeComp || !otherShapeComp) return
         if (shapeComp.where === EnumShapeInWhere.InList || otherShapeComp.where === EnumShapeInWhere.InList) return
 
-        console.log(this.shape2ShapeCollision)
         if (!this.shape2ShapeCollision.has(shapeComp)) this.shape2ShapeCollision.set(shapeComp, [])
         if (this.shape2ShapeCollision.get(shapeComp).includes(otherShapeComp)) return
         this.shape2ShapeCollision.get(shapeComp).push(otherShapeComp)
-
-        console.log(this.shape2ShapeCollision)
     }
 
     public onShapeListCollisionExit(other: cc.Collider, self: cc.Collider) {

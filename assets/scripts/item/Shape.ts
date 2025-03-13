@@ -1,4 +1,4 @@
-import { shapeType2BlockCnt } from "../common/Config";
+import { shapesConfig, shapeType2BlockCnt } from "../common/Config";
 import { EnumShapeInWhere } from "../Main";
 import ShapeManager from "../mgr/ShapeManager";
 
@@ -41,13 +41,11 @@ export default class Shape extends cc.Component {
         this.shapeType = types[1]
         this.blockCnt = shapeType2BlockCnt[this.shapeType]
 
-        if (this.blockType != 0) {
-            this.node.children.forEach(child => child.color = cc.Color.YELLOW)
-        } else {
-            this.node.children.forEach(child => child.color = cc.Color.WHITE)
-        }
 
-        if (this.blockType == 0) return
+        for (const child of this.node.children) {
+            if (child.name == "sp") child.active = this.blockType != 0
+            if (child.name == "block") child.active = this.blockType == 0
+        }
 
         if (!this.lbNode) {
 
@@ -57,16 +55,25 @@ export default class Shape extends cc.Component {
             this.lbNode.color = cc.Color.BLUE
             this.lbNode.getComponent(cc.Label).horizontalAlign = cc.Label.HorizontalAlign.CENTER
             this.lbNode.getComponent(cc.Label).verticalAlign = cc.Label.VerticalAlign.CENTER
-            this.lbNode.getComponent(cc.Label).fontSize = 24
-            this.lbNode.getComponent(cc.Label).lineHeight = 24
+            this.lbNode.getComponent(cc.Label).fontSize = 32
+            this.lbNode.getComponent(cc.Label).lineHeight = 32
             const posX = this.node.width / 2
             const posY = this.node.anchorY == 1 ? -this.node.height / 2 : this.node.height / 2
 
             this.lbNode.setPosition(posX, posY)
         }
 
-        this.lbNode.color = cc.Color.BLUE
+        this.lbNode.color = cc.Color.RED
         this.lbNode.getComponent(cc.Label).string = "Lv." + this.lv
+
+        const spNode = this.node.getChildByName("sp")
+        cc.assetManager.getBundle("synthesis").load(`texture/sp/block_type_${this.blockType}`, cc.SpriteFrame, (err, sp) => {
+            const config = shapesConfig.find((conf) => conf.blockType == this.blockType)
+            spNode.getComponent(cc.Sprite).spriteFrame = sp
+            spNode.x = config.spOffset[0]
+            spNode.y = config.spOffset[1]
+        })
+
     }
 
     public upgradeLevel() {

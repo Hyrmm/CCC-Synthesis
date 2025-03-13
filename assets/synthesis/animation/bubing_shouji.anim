@@ -1,0 +1,73 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bubing_shouji",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.5625,
+  "sample": 16,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "4ff55aff-1358-4cb9-9be3-a3bafebe8577"
+            }
+          },
+          {
+            "frame": 0.0625,
+            "value": {
+              "__uuid__": "c5bf0405-0f06-43db-bd34-1922ee4314b8"
+            }
+          },
+          {
+            "frame": 0.125,
+            "value": {
+              "__uuid__": "d47cc865-5eca-4cdc-a7fa-395a24d4347d"
+            }
+          },
+          {
+            "frame": 0.1875,
+            "value": {
+              "__uuid__": "ac354331-1f47-409d-903e-df05eb7dd233"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "38a8f79b-b394-4bbd-9e25-1873da584dc7"
+            }
+          },
+          {
+            "frame": 0.3125,
+            "value": {
+              "__uuid__": "28772138-fba2-49d0-a83f-afe036929a43"
+            }
+          },
+          {
+            "frame": 0.375,
+            "value": {
+              "__uuid__": "8a98dae1-c998-4ce6-ac91-33ba03eb118b"
+            }
+          },
+          {
+            "frame": 0.4375,
+            "value": {
+              "__uuid__": "ad8f0924-9053-4e6c-8fc2-baf2f18ec30b"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "b4942cbf-3abe-496f-a7a7-05844a28f4f0"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
