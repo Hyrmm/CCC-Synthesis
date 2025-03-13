@@ -91,7 +91,7 @@ export default class BagManager extends BaseManager {
         const shapeComp = other.node.getComponent(Shape)
         const bagBlockComp = self.node.getComponent(BagBlock)
 
-        if (shapeComp.blockType == EnumBlockType.Block) {
+        if (shapeComp.data.blockType == EnumBlockType.Block) {
             if (bagBlockComp.type == EnumBagBlockType.None) this.bagBlockName2Collision.set(self.node.name, self.node)
         } else {
             if (bagBlockComp.type == EnumBagBlockType.HasBlock && !this.bagBlockName2Collision.has(self.node.name)) this.bagBlockName2Collision.set(self.node.name, self.node)
@@ -174,7 +174,7 @@ export default class BagManager extends BaseManager {
 
         const placeWorldPos = curCollisions[0].parent.convertToWorldSpaceAR(curCollisions[0].position)
 
-        if (draggingShape.blockType == EnumBlockType.Block) {
+        if (draggingShape.data.blockType == EnumBlockType.Block) {
 
             this.bagBlockName2Collision.forEach((value, key) => {
                 value.opacity = 255
@@ -184,7 +184,7 @@ export default class BagManager extends BaseManager {
 
         } else {
 
-            this.shapeId2InPlaceShape.set(draggingShape.id, draggingShape)
+            this.shapeId2InPlaceShape.set(draggingShape.data.id, draggingShape)
             this.bagBlockName2Collision.forEach((value, key) => {
                 value.color = cc.Color.WHITE
                 if (!this.bagBlockName2InPlaceShape.has(key)) this.bagBlockName2InPlaceShape.set(key, draggingShape)
@@ -199,7 +199,7 @@ export default class BagManager extends BaseManager {
         const result = []
 
         for (const [key, shape] of this.bagBlockName2InPlaceShape) {
-            if (shapeId == shape.id) {
+            if (shapeId == shape.data.id) {
                 const [row, col] = key.split('_')
                 result.push(this.bagBlocks[row][col])
             }
@@ -212,7 +212,7 @@ export default class BagManager extends BaseManager {
     public getBlockPosByInPlaceShapeId(shapeId: number): Array<number[]> {
         const result = []
         for (const [key, shape] of this.bagBlockName2InPlaceShape) {
-            if (shapeId == shape.id) {
+            if (shapeId == shape.data.id) {
                 result.push(key.split('_'))
             }
         }
@@ -228,7 +228,7 @@ export default class BagManager extends BaseManager {
     public setBlockInPlaceShapeByPos(pos: number[], shape: Shape) {
         const [row, col] = pos
         const bagBlock = this.bagBlocks[row][col]
-        this.shapeId2InPlaceShape.set(shape.id, shape)
+        this.shapeId2InPlaceShape.set(shape.data.id, shape)
         this.bagBlockName2InPlaceShape.set(bagBlock.node.name, shape)
     }
 

@@ -1,4 +1,5 @@
-import { ShapeConfig, shapesConfig } from "./common/Config";
+import { shapeDatas, TShapeData } from "./common/Config";
+import { ObjectPool } from "./common/Pool";
 import BagManager from "./mgr/BagManager";
 import ShapeManager from "./mgr/ShapeManager";
 import TowerManager from "./mgr/TowerManager";
@@ -17,8 +18,10 @@ export default class Main extends cc.Component {
     @property(ShapeManager)
     towerManager: TowerManager = null
 
+    @property(cc.Node)
+    btn_refresh: cc.Node = null
 
-    private shapesPool: ObjectPool<ShapeConfig> = null
+    private shapesPool: ObjectPool<TShapeData> = null
 
     start() {
 
@@ -28,26 +31,37 @@ export default class Main extends cc.Component {
         // manager.enabledDrawBoundingBox = true
 
         window['main'] = this
-        cc.assetManager.loadBundle("synthesis", this.init)
+        cc.assetManager.loadBundle("synthesis", this.init.bind(this))
     }
 
     init() {
 
-        shapesConfig.forEach((val, index) => val.id = index)
+        shapeDatas.forEach((val, index) => val.id = index)
 
         this.bagManager.init(this)
         this.shapeManager.init(this)
 
-        this.shapesPool = new ObjectPool<ShapeConfig>(shapesConfig)
+        this.shapesPool = new ObjectPool<TShapeData>(shapeDatas)
+        this.refreshShapes()
+
+
+        this.btn_refresh.on(cc.Node.EventType.TOUCH_END, () => this.refreshShapes())
     }
 
     public refreshShapes() {
 
-        for (let i = 0; i < 4; i++) {
-            const shapes = this.shapesPool.acquire()
-            this.shapeManager.addShapeInList(shapes.id, shapes.blockType, shapes.shapeType)
-        }
+        const shapeInlist = Array.from(this.shapeManager.shapeList.values()).filter(shape => shape.where == EnumShapeInWhere.InList)
 
+        shapeInlist.forEach(shape => {
+            this.shapeManager.delShapeById(shape.data.id)
+            this.shapesPool.release(shape.data)
+        })
+
+
+        for (let i = 0; i < 4; i++) {
+            const shapeData = this.shapesPool.acquire()
+            this.shapeManager.addShapeInList(shapeData)
+        }
     }
 }
 

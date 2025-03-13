@@ -360,7 +360,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 640,
-      "height": 200
+      "height": 180
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -429,7 +429,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 640,
-      "height": 200
+      "height": 180
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -799,8 +799,8 @@
     "_alignFlags": 45,
     "_left": 0,
     "_right": 0,
-    "_top": 0,
-    "_bottom": 0,
+    "_top": 10,
+    "_bottom": 10,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
@@ -1224,7 +1224,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -241,
+        -266,
         0,
         0,
         0,
@@ -1394,8 +1394,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "button",
-    "_N$string": "button",
+    "_string": "refresh",
+    "_N$string": "refresh",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -1566,7 +1566,7 @@
     "_alignFlags": 1,
     "_left": 0,
     "_right": 0,
-    "_top": 789,
+    "_top": 814,
     "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
@@ -1595,6 +1595,9 @@
       "__id__": 23
     },
     "towerManager": null,
+    "btn_refresh": {
+      "__id__": 28
+    },
     "_id": "cb6m9VLLFJUaf4SPKfz2vC"
   },
   {

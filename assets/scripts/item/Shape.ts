@@ -1,4 +1,4 @@
-import { shapesConfig, shapeType2BlockCnt } from "../common/Config";
+import { shapeType2BlockCnt, TShapeData } from "../common/Config";
 import { EnumShapeInWhere } from "../Main";
 import ShapeManager from "../mgr/ShapeManager";
 
@@ -7,21 +7,14 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class Shape extends cc.Component {
 
-    public id: number = -1
-    public lv: number = -1
     public owner: ShapeManager = null
-
-    public blockType: number = -1
-    public shapeType: number = -1
 
     public where: EnumShapeInWhere
     public blockCnt: number = -1
 
     private lbNode: cc.Node = null
 
-    start() {
-
-    }
+    public data: TShapeData = null
 
     public init(owner: ShapeManager) {
 
@@ -32,20 +25,21 @@ export default class Shape extends cc.Component {
         this.node.on(cc.Node.EventType.TOUCH_CANCEL, this.owner.onShapeTouchEnded, this.owner)
     }
 
-    public reset(id: number, lv: number, types: number[], where: EnumShapeInWhere) {
+    public reset(shapeData: TShapeData, where: EnumShapeInWhere) {
 
-        this.id = id
-        this.lv = lv
+        this.node.opacity = 255
+
+        this.data = shapeData
         this.where = where
-        this.blockType = types[0]
-        this.shapeType = types[1]
-        this.blockCnt = shapeType2BlockCnt[this.shapeType]
+        this.blockCnt = shapeType2BlockCnt[this.data.shapeType]
 
+        this.renderLabel()
+        this.renderSprite()
+        this.renderHightlight()
 
-        for (const child of this.node.children) {
-            if (child.name == "sp") child.active = this.blockType != 0
-            if (child.name == "block") child.active = this.blockType == 0
-        }
+    }
+
+    private renderLabel() {
 
         if (!this.lbNode) {
 
@@ -64,21 +58,26 @@ export default class Shape extends cc.Component {
         }
 
         this.lbNode.color = cc.Color.RED
-        this.lbNode.getComponent(cc.Label).string = "Lv." + this.lv
+        this.lbNode.getComponent(cc.Label).string = "Lv." + this.data.lv
 
-        const spNode = this.node.getChildByName("sp")
-        cc.assetManager.getBundle("synthesis").load(`texture/sp/block_type_${this.blockType}`, cc.SpriteFrame, (err, sp) => {
-            const config = shapesConfig.find((conf) => conf.blockType == this.blockType)
-            spNode.getComponent(cc.Sprite).spriteFrame = sp
-            spNode.x = config.spOffset[0]
-            spNode.y = config.spOffset[1]
-        })
-
+        this.lbNode.active = this.data.blockType != 0
     }
 
-    public upgradeLevel() {
-        this.lv += 1
-        this.lbNode.getComponent(cc.Label).string = "Lv." + this.lv
+    private renderSprite() {
+        const spNode = this.node.getChildByName("sp")
+        cc.assetManager.getBundle("synthesis").load(`texture/sp/block_type_${this.data.blockType}`, cc.SpriteFrame, (err, sp) => {
+            spNode.getComponent(cc.Sprite).spriteFrame = sp
+            spNode.x = this.data.spOffset[0]
+            spNode.y = this.data.spOffset[1]
+        })
+    }
+
+    private renderHightlight() {
+        for (const child of this.node.children) {
+            if (child.name == "sp") child.active = this.data.blockType != 0
+            if (child.name == "block") child.active = this.data.blockType == 0
+        }
+
     }
 
     public onCollisionStay(other, self) {
@@ -87,5 +86,10 @@ export default class Shape extends cc.Component {
 
     public onCollisionExit(other, self) {
         this.owner.onShapeCollisionExit(other, self)
+    }
+
+    public upgradeLevel() {
+        this.data.lv += 1
+        this.lbNode.getComponent(cc.Label).string = "Lv." + this.data.lv
     }
 }

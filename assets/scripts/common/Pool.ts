@@ -1,4 +1,4 @@
-class ObjectPool<T> {
+export class ObjectPool<T> {
 
     private available: T[] = []
     private inUse: Set<T> = new Set()
