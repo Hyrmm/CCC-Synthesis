@@ -12,7 +12,6 @@ export default class BagManager extends BaseManager {
     @property(cc.Prefab)
     prefeb_bagBlock: cc.Prefab = null
 
-    private bagBlocks: Array<BagBlock[]> = []
     private bagBlockName2Collision: Map<string, cc.Node> = new Map()
     private shapeId2InPlaceShape: Map<number, Shape> = new Map()
     private bagBlockName2InPlaceShape: Map<string, Shape> = new Map()
@@ -20,65 +19,60 @@ export default class BagManager extends BaseManager {
     private maxSize: number[] = []
     private defalueSize: number[] = []
 
-    // start() {
-    //     super.start()
-
-
-
-    //     // this.scheduleOnce(() => {
-
-    //     //     const position = this.node.position.clone()
-    //     //     cc.tween(this.node).to(0.5, { scale: 0.6, position: cc.v3(-(320 - this.maxSize[0] / 2 * 60 * 0.6), position.y, 0) }).start()
-    //     // }, 2)
-    // }
-
     init(owner: Main): void {
 
         super.init(owner)
 
-        this.maxSize = globalConfig.bagMaxSize
-        this.defalueSize = globalConfig.bagDefalueSize
-
+        this.node.children.forEach((child) => child.getComponent(BagBlock).init(this, EnumBagBlockType.HasBlock))
         this.initBagBlocks()
-
-        this.node.getComponent(cc.Widget).top = this.maxSize[1] / 2 * 60
     }
 
     private initBagBlocks() {
-        const [spacing, blockSize] = [globalConfig.spacing, globalConfig.blockSize]
-        const [maxW, maxH, defW, defH] = this.maxSize.concat(this.defalueSize)
+        // const [spacing, blockSize] = [globalConfig.spacing, globalConfig.blockSize]
+        // const [maxW, maxH, defW, defH] = this.maxSize.concat(this.defalueSize)
 
-        // 显示范围
-        const startX = Math.floor((maxW - defW) / 2)
-        const startY = Math.floor((maxH - defH) / 2)
-        const endX = startX + defW
-        const endY = startY + defH
+        // // 显示范围
+        // const startX = Math.floor((maxW - defW) / 2)
+        // const startY = Math.floor((maxH - defH) / 2)
+        // const endX = startX + defW
+        // const endY = startY + defH
 
-        // 创建格子
-        for (let row = 0; row < maxH; row++) {
-            for (let col = 0; col < maxW; col++) {
+        // // 创建格子
+        // for (let row = 0; row < maxH; row++) {
+        //     for (let col = 0; col < maxW; col++) {
 
-                const bagBlock = cc.instantiate(this.prefeb_bagBlock)
-                const bagBlockComp = bagBlock.getComponent(BagBlock)
+        //         const bagBlock = cc.instantiate(this.prefeb_bagBlock)
+        //         const bagBlockComp = bagBlock.getComponent(BagBlock)
 
-                bagBlock.width = globalConfig.blockSize
-                bagBlock.height = globalConfig.blockSize
-                const posX = col < maxW / 2 ? -1 * ((maxW / 2 - col - 1) * (blockSize) + blockSize / 2) : (col - maxW / 2) * (blockSize) + blockSize / 2
-                const posY = row < maxH / 2 ? -1 * ((maxH / 2 - row - 1) * (blockSize) + blockSize / 2) : (row - maxH / 2) * (blockSize) + blockSize / 2
+        //         bagBlock.width = globalConfig.blockSize
+        //         bagBlock.height = globalConfig.blockSize
+        //         const posX = col < maxW / 2 ? -1 * ((maxW / 2 - col - 1) * (blockSize) + blockSize / 2) : (col - maxW / 2) * (blockSize) + blockSize / 2
+        //         const posY = row < maxH / 2 ? -1 * ((maxH / 2 - row - 1) * (blockSize) + blockSize / 2) : (row - maxH / 2) * (blockSize) + blockSize / 2
 
-                bagBlock.position = cc.v3(posX, posY, 0)
-                bagBlock.parent = this.node
-                bagBlock.name = `${row}_${col}`
+        //         bagBlock.position = cc.v3(posX, posY, 0)
+        //         bagBlock.parent = this.node
+        //         bagBlock.name = `${row}_${col}`
 
 
-                const type = (row >= startY && row < endY && col >= startX && col < endX) ? EnumBagBlockType.HasBlock : EnumBagBlockType.None
-                bagBlockComp.init(this, type)
-                bagBlock.getComponent(cc.BoxCollider).size = cc.size(blockSize - spacing, blockSize - spacing)
+        //         const type = (row >= startY && row < endY && col >= startX && col < endX) ? EnumBagBlockType.HasBlock : EnumBagBlockType.None
+        //         bagBlockComp.init(this, type)
+        //         bagBlock.getComponent(cc.BoxCollider).size = cc.size(blockSize - spacing, blockSize - spacing)
 
-                if (!this.bagBlocks[row]) this.bagBlocks[row] = []
-                this.bagBlocks[row][col] = bagBlockComp
-            }
-        }
+        //         if (!this.bagBlocks[row]) this.bagBlocks[row] = []
+        //         this.bagBlocks[row][col] = bagBlockComp
+        //     }
+        // }
+
+        this.node.children.sort((a, b) => {
+            if (a.y == b.y) return a.x - b.x
+            return b.y - a.y
+        })
+
+        this.node.children.forEach((child, index) => {
+            child.name = `block_${index}`
+            child.getComponent(BagBlock).init(this, EnumBagBlockType.HasBlock)
+        })
+
     }
 
     public onCollisionEnter(other: cc.Collider, self: cc.Collider) {
@@ -200,8 +194,7 @@ export default class BagManager extends BaseManager {
 
         for (const [key, shape] of this.bagBlockName2InPlaceShape) {
             if (shapeId == shape.data.id) {
-                const [row, col] = key.split('_')
-                result.push(this.bagBlocks[row][col])
+                result.push(this.node.getChildByName(key).getComponent(BagBlock))
             }
         }
 
@@ -209,11 +202,11 @@ export default class BagManager extends BaseManager {
 
     }
 
-    public getBlockPosByInPlaceShapeId(shapeId: number): Array<number[]> {
+    public getBlockIdByInPlaceShapeId(shapeId: number): number[] {
         const result = []
         for (const [key, shape] of this.bagBlockName2InPlaceShape) {
             if (shapeId == shape.data.id) {
-                result.push(key.split('_'))
+                result.push(key.split('_')[1])
             }
         }
         return result
@@ -225,11 +218,10 @@ export default class BagManager extends BaseManager {
         bagBlocks.forEach((bagBlock) => this.bagBlockName2InPlaceShape.delete(bagBlock.node.name))
     }
 
-    public setBlockInPlaceShapeByPos(pos: number[], shape: Shape) {
-        const [row, col] = pos
-        const bagBlock = this.bagBlocks[row][col]
+    public setBlockInPlaceShapeById(id: number, shape: Shape) {
+        const bagBlock = this.node.getChildByName(`block_${id}`)
         this.shapeId2InPlaceShape.set(shape.data.id, shape)
-        this.bagBlockName2InPlaceShape.set(bagBlock.node.name, shape)
+        this.bagBlockName2InPlaceShape.set(bagBlock.name, shape)
     }
 
 }

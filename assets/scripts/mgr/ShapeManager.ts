@@ -20,7 +20,7 @@ export default class ShapeManager extends BaseManager {
     @property(cc.Node)
     panel_inplace: cc.Node = null
 
-    public draggingShape: DragingShape = { target: null, targetCopy: null, originalPos: null, originalCollionPos: null }
+    public draggingShape: DragingShape = { target: null, targetCopy: null, originalPos: null, originalBlockId: null }
     public shapeList: Map<number, Shape> = new Map()
 
 
@@ -99,11 +99,13 @@ export default class ShapeManager extends BaseManager {
             const targetWorldPos = target.parent.convertToWorldSpaceAR(target.position)
             copyTarget.position = this.panel_inplace.convertToNodeSpaceAR(targetWorldPos)
 
+
+            // target.parent = this.panel_inplace
             target.opacity = 0
             this.panel_scrollView.getComponent(cc.ScrollView).enabled = false
             this.draggingShape.targetCopy = copyTarget
         } else {
-            this.draggingShape.originalCollionPos = this.owner.bagManager.getBlockPosByInPlaceShapeId(shapeComp.data.id)
+            this.draggingShape.originalBlockId = this.owner.bagManager.getBlockIdByInPlaceShapeId(shapeComp.data.id)
             this.owner.bagManager.setBlockEmptyByShapeId(shapeComp.data.id)
         }
 
@@ -125,6 +127,13 @@ export default class ShapeManager extends BaseManager {
                 this.draggingShape.targetCopy.position.y + delta.y,
                 this.draggingShape.targetCopy.position.z
             )
+
+            // this.draggingShape.target.position = new cc.Vec3(
+            //     this.draggingShape.target.position.x + delta.x,
+            //     this.draggingShape.target.position.y + delta.y,
+            //     this.draggingShape.target.position.z
+            // )
+
 
         } else {
 
@@ -173,8 +182,8 @@ export default class ShapeManager extends BaseManager {
                         this.draggingShape.target.position = new cc.Vec3(0, posY, 0)
                     } else {
 
-                        for (const collionPos of this.draggingShape.originalCollionPos) {
-                            this.owner.bagManager.setBlockInPlaceShapeByPos(collionPos, shapeComp)
+                        for (const blockId of this.draggingShape.originalBlockId) {
+                            this.owner.bagManager.setBlockInPlaceShapeById(blockId, shapeComp)
                         }
 
                         this.draggingShape.target.position = this.draggingShape.originalPos
@@ -183,8 +192,8 @@ export default class ShapeManager extends BaseManager {
 
                 } else {
 
-                    for (const collionPos of this.draggingShape.originalCollionPos) {
-                        this.owner.bagManager.setBlockInPlaceShapeByPos(collionPos, shapeComp)
+                    for (const blockId of this.draggingShape.originalBlockId) {
+                        this.owner.bagManager.setBlockInPlaceShapeById(blockId, shapeComp)
                     }
 
                     this.draggingShape.target.position = this.draggingShape.originalPos

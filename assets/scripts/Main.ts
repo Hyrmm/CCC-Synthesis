@@ -2,7 +2,6 @@ import { shapeDatas, TShapeData } from "./common/Config";
 import { ObjectPool } from "./common/Pool";
 import BagManager from "./mgr/BagManager";
 import ShapeManager from "./mgr/ShapeManager";
-import TowerManager from "./mgr/TowerManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -15,9 +14,6 @@ export default class Main extends cc.Component {
     @property(ShapeManager)
     shapeManager: ShapeManager = null
 
-    @property(ShapeManager)
-    towerManager: TowerManager = null
-
     @property(cc.Node)
     btn_refresh: cc.Node = null
 
@@ -27,8 +23,8 @@ export default class Main extends cc.Component {
 
         const manager = cc.director.getCollisionManager()
         manager.enabled = true
-        // manager.enabledDebugDraw = true
-        // manager.enabledDrawBoundingBox = true
+        manager.enabledDebugDraw = true
+        manager.enabledDrawBoundingBox = true
 
         window['main'] = this
         cc.assetManager.loadBundle("synthesis", this.init.bind(this))
@@ -84,7 +80,7 @@ export type DragingShape = {
     target: cc.Node | null,
     targetCopy: cc.Node | null,
     originalPos: cc.Vec3,
-    originalCollionPos: Array<number[]>,
+    originalBlockId: number[],
 }
 
 

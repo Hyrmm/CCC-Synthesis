@@ -4,6 +4,11 @@ import ShapeManager from "../mgr/ShapeManager";
 
 const { ccclass, property } = cc._decorator;
 
+const blockType2SpineName = {
+
+}
+
+
 @ccclass
 export default class Shape extends cc.Component {
 
@@ -65,10 +70,16 @@ export default class Shape extends cc.Component {
 
     private renderSprite() {
         const spNode = this.node.getChildByName("sp")
-        cc.assetManager.getBundle("synthesis").load(`texture/sp/block_type_${this.data.blockType}`, cc.SpriteFrame, (err, sp) => {
-            spNode.getComponent(cc.Sprite).spriteFrame = sp
-            spNode.x = this.data.spOffset[0]
-            spNode.y = this.data.spOffset[1]
+        // cc.assetManager.getBundle("synthesis").load(`texture/sp/block_type_${this.data.blockType}`, cc.SpriteFrame, (err, sp) => {
+        //     spNode.getComponent(cc.Sprite).spriteFrame = sp
+        //     spNode.x = this.data.spOffset[0]
+        //     spNode.y = this.data.spOffset[1]
+        // })
+
+        cc.assetManager.getBundle("synthesis").load(`texture/sp/block_type_${this.data.blockType}`, sp.SkeletonData, (err, rowdata) => {
+            spNode.getComponent(sp.Skeleton).skeletonData = rowdata
+            // spNode.x = this.data.spOffset[0]
+            // spNode.y = this.data.spOffset[1]
         })
     }
 
