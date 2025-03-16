@@ -525,7 +525,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "sp",
+    "_name": "sk",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -562,8 +562,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        52,
-        48,
+        0,
+        0,
         0,
         0,
         0,

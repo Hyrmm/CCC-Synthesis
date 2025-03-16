@@ -195,7 +195,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "sp",
+    "_name": "sk",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -232,8 +232,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        35,
-        57,
+        0,
+        0,
         0,
         0,
         0,
@@ -271,12 +271,12 @@
       }
     ],
     "paused": false,
-    "defaultSkin": "default",
+    "defaultSkin": "",
     "defaultAnimation": "",
-    "_preCacheMode": 0,
+    "_preCacheMode": -1,
     "_cacheMode": 0,
     "loop": true,
-    "premultipliedAlpha": true,
+    "premultipliedAlpha": false,
     "timeScale": 1,
     "_accTime": 0,
     "_playCount": 0,

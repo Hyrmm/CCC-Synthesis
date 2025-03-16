@@ -1,47 +1,125 @@
-import { shapeType2BlockCnt, TShapeData } from "../common/Config";
+import { TShapeData } from "../common/Config";
+import { StateMachine } from "../common/Fsm";
 import { EnumShapeInWhere } from "../Main";
 import ShapeManager from "../mgr/ShapeManager";
+import { Attacking } from "../state/shapeState/Attacking";
+import { Warning } from "../state/shapeState/Warning";
+import Enemy from "./Enemy";
 
 const { ccclass, property } = cc._decorator;
 
 const blockType2SpineName = {
-
+    1: "gongjian",
+    2: "jianshi",
+    3: "qibing"
 }
 
+const shapeType2BlockCnt = {
+    0: 1,
+    1: 2,
+    2: 2,
+    3: 3,
+    4: 3,
+    5: 3,
+    6: 4,
+}
 
 @ccclass
 export default class Shape extends cc.Component {
-
     public owner: ShapeManager = null
 
+    public data: TShapeData = null
     public where: EnumShapeInWhere
     public blockCnt: number = -1
 
     private lbNode: cc.Node = null
+    private stateMachine: StateMachine<this> = null
 
-    public data: TShapeData = null
+    public targetEnemy: Enemy = null
 
-    public init(owner: ShapeManager) {
+    public attackRange: number = 200
+
+    public skComp: sp.Skeleton = null
+
+    init(owner: ShapeManager) {
 
         this.owner = owner
+        this.stateMachine = new StateMachine(this)
+        this.skComp = this.node.getChildByName("sk").getComponent(sp.Skeleton)
         this.node.on(cc.Node.EventType.TOUCH_START, this.owner.onShapeTouchBegan, this.owner)
         this.node.on(cc.Node.EventType.TOUCH_MOVE, this.owner.onShapeTouchMoved, this.owner)
         this.node.on(cc.Node.EventType.TOUCH_END, this.owner.onShapeTouchEnded, this.owner)
         this.node.on(cc.Node.EventType.TOUCH_CANCEL, this.owner.onShapeTouchEnded, this.owner)
     }
 
-    public reset(shapeData: TShapeData, where: EnumShapeInWhere) {
+    reset(shapeData: TShapeData, where: EnumShapeInWhere) {
 
         this.node.opacity = 255
 
         this.data = shapeData
         this.where = where
         this.blockCnt = shapeType2BlockCnt[this.data.shapeType]
+        this.stateMachine.reset(this)
 
         this.renderLabel()
-        this.renderSprite()
+        this.renderSkeleton()
         this.renderHightlight()
+        this.registerState()
 
+    }
+
+    registerState() {
+
+        const warning = new Warning(this)
+        const attacking = new Attacking(this)
+
+        const hasTargetEnemy = () => this.targetEnemy != null
+
+        const isTargerDead = () => {
+            if (!this.targetEnemy) return false
+
+            if (this.targetEnemy.data.attr[0] <= 0) {
+                this.targetEnemy = null
+                return true
+            }
+            return false
+        }
+
+        const isTargerFarAway = () => {
+
+            const worldPos1 = this.node.parent.convertToWorldSpaceAR(this.node.position)
+            const worldPos2 = this.targetEnemy.node.parent.convertToWorldSpaceAR(this.targetEnemy.node.position)
+
+            if (this.targetEnemy && worldPos1.sub(worldPos2).mag() > this.attackRange) {
+                this.targetEnemy = null
+                return true
+            }
+            return false
+        }
+
+        this.stateMachine.addTransition(warning, attacking, hasTargetEnemy)
+
+        this.stateMachine.addTransition(attacking, warning, isTargerDead)
+        this.stateMachine.addTransition(attacking, warning, isTargerFarAway)
+
+        this.stateMachine.setState(warning)
+    }
+
+    onUpdate(dt: number) {
+        if (this.node.parent && this.where == EnumShapeInWhere.InPlace) this.stateMachine.tick(dt)
+    }
+
+    upgradeLevel() {
+        this.data.lv += 1
+        this.lbNode.getComponent(cc.Label).string = "Lv." + this.data.lv
+    }
+
+    onCollisionStay(other, self) {
+        this.owner.onShapeCollisionStay(other, self)
+    }
+
+    onCollisionExit(other, self) {
+        this.owner.onShapeCollisionExit(other, self)
     }
 
     private renderLabel() {
@@ -68,18 +146,17 @@ export default class Shape extends cc.Component {
         this.lbNode.active = this.data.blockType != 0
     }
 
-    private renderSprite() {
-        const spNode = this.node.getChildByName("sp")
-        // cc.assetManager.getBundle("synthesis").load(`texture/sp/block_type_${this.data.blockType}`, cc.SpriteFrame, (err, sp) => {
-        //     spNode.getComponent(cc.Sprite).spriteFrame = sp
-        //     spNode.x = this.data.spOffset[0]
-        //     spNode.y = this.data.spOffset[1]
-        // })
+    private renderSkeleton() {
 
-        cc.assetManager.getBundle("synthesis").load(`texture/sp/block_type_${this.data.blockType}`, sp.SkeletonData, (err, rowdata) => {
-            spNode.getComponent(sp.Skeleton).skeletonData = rowdata
-            // spNode.x = this.data.spOffset[0]
-            // spNode.y = this.data.spOffset[1]
+        const skNode = this.node.getChildByName("sk")
+
+        cc.assetManager.getBundle("synthesis").load(`spine/shapes/${blockType2SpineName[this.data.blockType]}${this.data.lv}_red`, sp.SkeletonData, (err, rowdata) => {
+            if (err) return console.error(err)
+            skNode.getComponent(sp.Skeleton).skeletonData = rowdata
+            skNode.getComponent(sp.Skeleton).setAnimation(0, "idle1", true)
+            skNode.scale = 1.5
+            skNode.x = this.data.spOffset[0]
+            skNode.y = this.data.spOffset[1]
         })
     }
 
@@ -89,18 +166,5 @@ export default class Shape extends cc.Component {
             if (child.name == "block") child.active = this.data.blockType == 0
         }
 
-    }
-
-    public onCollisionStay(other, self) {
-        this.owner.onShapeCollisionStay(other, self)
-    }
-
-    public onCollisionExit(other, self) {
-        this.owner.onShapeCollisionExit(other, self)
-    }
-
-    public upgradeLevel() {
-        this.data.lv += 1
-        this.lbNode.getComponent(cc.Label).string = "Lv." + this.data.lv
     }
 }

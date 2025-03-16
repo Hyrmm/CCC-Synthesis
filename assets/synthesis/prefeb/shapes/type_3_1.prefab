@@ -305,7 +305,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "sp",
+    "_name": "sk",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -342,8 +342,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        63,
-        51,
+        0,
+        0,
         0,
         0,
         0,
@@ -434,7 +434,7 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 65,
+      "width": 55,
       "height": 5
     },
     "_id": ""

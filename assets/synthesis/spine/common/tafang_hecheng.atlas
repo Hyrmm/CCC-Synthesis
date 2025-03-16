@@ -1,0 +1,251 @@
+
+tafang_hecheng.png
+size: 1494,1494
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+zs_hecheng1_00001
+  rotate: false
+  xy: 1391, 1474
+  size: 24, 18
+  orig: 600, 300
+  offset: 286, 121
+  index: -1
+zs_hecheng1_00003
+  rotate: false
+  xy: 2, 513
+  size: 392, 180
+  orig: 600, 300
+  offset: 106, 34
+  index: -1
+zs_hecheng1_00005
+  rotate: false
+  xy: 2, 952
+  size: 477, 267
+  orig: 600, 300
+  offset: 63, 0
+  index: -1
+zs_hecheng1_00007
+  rotate: false
+  xy: 2, 1221
+  size: 485, 271
+  orig: 600, 300
+  offset: 59, 0
+  index: -1
+zs_hecheng1_00009
+  rotate: false
+  xy: 489, 1226
+  size: 477, 266
+  orig: 600, 300
+  offset: 63, 0
+  index: -1
+zs_hecheng1_00011
+  rotate: false
+  xy: 2, 695
+  size: 459, 255
+  orig: 600, 300
+  offset: 72, 0
+  index: -1
+zs_hecheng1_00013
+  rotate: false
+  xy: 968, 1269
+  size: 421, 223
+  orig: 600, 300
+  offset: 91, 17
+  index: -1
+zs_hecheng1_00015
+  rotate: false
+  xy: 968, 1045
+  size: 296, 222
+  orig: 600, 300
+  offset: 154, 24
+  index: -1
+zs_hecheng1_00017
+  rotate: false
+  xy: 761, 761
+  size: 248, 234
+  orig: 600, 300
+  offset: 185, 19
+  index: -1
+zs_hecheng1_00019
+  rotate: false
+  xy: 282, 2
+  size: 250, 240
+  orig: 600, 300
+  offset: 185, 18
+  index: -1
+zs_hecheng1_00021
+  rotate: false
+  xy: 738, 516
+  size: 250, 243
+  orig: 600, 300
+  offset: 187, 18
+  index: -1
+zs_hecheng1_00023
+  rotate: true
+  xy: 1266, 1020
+  size: 247, 225
+  orig: 600, 300
+  offset: 192, 20
+  index: -1
+zs_hecheng1_00025
+  rotate: true
+  xy: 1157, 319
+  size: 221, 184
+  orig: 600, 300
+  offset: 219, 63
+  index: -1
+zs_hecheng1_00027
+  rotate: false
+  xy: 990, 311
+  size: 165, 222
+  orig: 600, 300
+  offset: 220, 23
+  index: -1
+zs_hecheng1_00029
+  rotate: true
+  xy: 1131, 149
+  size: 160, 157
+  orig: 600, 300
+  offset: 223, 86
+  index: -1
+zs_hecheng2_00001
+  rotate: true
+  xy: 1375, 548
+  size: 215, 104
+  orig: 600, 300
+  offset: 191, 53
+  index: -1
+zs_hecheng2_00003
+  rotate: true
+  xy: 990, 535
+  size: 224, 165
+  orig: 600, 300
+  offset: 182, 46
+  index: -1
+zs_hecheng2_00005
+  rotate: true
+  xy: 950, 65
+  size: 232, 179
+  orig: 600, 300
+  offset: 177, 37
+  index: -1
+zs_hecheng2_00007
+  rotate: true
+  xy: 769, 997
+  size: 227, 188
+  orig: 600, 300
+  offset: 177, 36
+  index: -1
+zs_hecheng2_00009
+  rotate: true
+  xy: 534, 42
+  size: 223, 202
+  orig: 600, 300
+  offset: 182, 33
+  index: -1
+zs_hecheng2_00011
+  rotate: false
+  xy: 1157, 542
+  size: 216, 221
+  orig: 600, 300
+  offset: 191, 30
+  index: -1
+zs_hecheng2_00013
+  rotate: true
+  xy: 732, 299
+  size: 215, 256
+  orig: 600, 300
+  offset: 193, 22
+  index: -1
+zs_hecheng2_00015
+  rotate: false
+  xy: 738, 33
+  size: 210, 264
+  orig: 600, 300
+  offset: 200, 20
+  index: -1
+zs_hecheng2_00017
+  rotate: false
+  xy: 513, 267
+  size: 217, 266
+  orig: 600, 300
+  offset: 199, 17
+  index: -1
+zs_hecheng2_00019
+  rotate: true
+  xy: 463, 535
+  size: 242, 273
+  orig: 600, 300
+  offset: 194, 12
+  index: -1
+zs_hecheng2_00021
+  rotate: false
+  xy: 1011, 770
+  size: 244, 273
+  orig: 600, 300
+  offset: 193, 14
+  index: -1
+zs_hecheng2_00023
+  rotate: true
+  xy: 2, 12
+  size: 229, 278
+  orig: 600, 300
+  offset: 197, 11
+  index: -1
+zs_hecheng2_00025
+  rotate: true
+  xy: 489, 1009
+  size: 215, 278
+  orig: 600, 300
+  offset: 186, 11
+  index: -1
+zs_hecheng2_00027
+  rotate: true
+  xy: 481, 779
+  size: 228, 278
+  orig: 600, 300
+  offset: 183, 11
+  index: -1
+zs_hecheng2_00029
+  rotate: false
+  xy: 261, 244
+  size: 250, 267
+  orig: 600, 300
+  offset: 195, 21
+  index: -1
+zs_hecheng2_00031
+  rotate: false
+  xy: 2, 243
+  size: 257, 268
+  orig: 600, 300
+  offset: 192, 20
+  index: -1
+zs_hecheng2_00033
+  rotate: false
+  xy: 1257, 765
+  size: 224, 253
+  orig: 600, 300
+  offset: 188, 31
+  index: -1
+zs_hecheng2_00035
+  rotate: false
+  xy: 1343, 358
+  size: 142, 182
+  orig: 600, 300
+  offset: 224, 96
+  index: -1
+zs_hecheng2_00037
+  rotate: false
+  xy: 1343, 234
+  size: 140, 122
+  orig: 600, 300
+  offset: 225, 97
+  index: -1
+zs_hecheng2_00039
+  rotate: false
+  xy: 1131, 33
+  size: 133, 114
+  orig: 600, 300
+  offset: 224, 99
+  index: -1

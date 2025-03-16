@@ -1,6 +1,6 @@
 import { globalConfig, TShapeData } from "../common/Config";
 import Shape from "../item/Shape";
-import Main, { DragingShape, EnumShapeInWhere, EnumBlockType } from "../Main";
+import Main, { DragingShape, EnumShapeInWhere, EnumBlockType, EnumStage } from "../Main";
 import BaseManager from "./BaseManager";
 
 const { ccclass, property } = cc._decorator;
@@ -23,7 +23,6 @@ export default class ShapeManager extends BaseManager {
     public draggingShape: DragingShape = { target: null, targetCopy: null, originalPos: null, originalBlockId: null }
     public shapeList: Map<number, Shape> = new Map()
 
-
     private shape2ShapeCollision: Map<Shape, Shape[]> = new Map()
     private shape2ShapeListCollision: Map<Shape, cc.Collider> = new Map()
     private shapeType2ShapePool: Map<number, cc.NodePool> = new Map()
@@ -36,12 +35,14 @@ export default class ShapeManager extends BaseManager {
         this.panel_scrollView.getComponent(cc.BoxCollider)['onCollisionStay'] = this.onShapeListCollisionStay.bind(this)
     }
 
-    update(dt: number): void {
+    onUpdate(dt: number): void {
 
         const shapeListCollider = this.panel_scrollView.getComponent(cc.BoxCollider)
 
         shapeListCollider.size.width = Math.max(this.panel_list.width, 640)
         shapeListCollider.offset.x = shapeListCollider.size.width / 2
+
+        this.shapeList.forEach((shape) => shape.onUpdate(dt))
     }
 
     public addShapeInList(shapeData: TShapeData) {
@@ -76,6 +77,8 @@ export default class ShapeManager extends BaseManager {
     }
 
     public onShapeTouchBegan(event: cc.Event.EventTouch) {
+
+        if (this.owner.curStage != EnumStage.Placing) return
 
         const target = event.currentTarget as cc.Node
         const shapeComp = target.getComponent(Shape)
@@ -115,6 +118,8 @@ export default class ShapeManager extends BaseManager {
 
     public onShapeTouchMoved(event: cc.Event.EventTouch) {
 
+        if (this.owner.curStage != EnumStage.Placing) return
+
         if (!this.draggingShape.target) return
 
         const delta = event.getDelta()
@@ -148,6 +153,8 @@ export default class ShapeManager extends BaseManager {
     }
 
     public onShapeTouchEnded(event: cc.Event.EventTouch) {
+
+        if (this.owner.curStage != EnumStage.Placing) return
 
         const dropResult = this.owner.bagManager.dropShape()
 

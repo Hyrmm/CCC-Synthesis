@@ -27,6 +27,10 @@ export default class BagManager extends BaseManager {
         this.initBagBlocks()
     }
 
+    onUpdate(dt: number): void {
+        
+    }
+
     private initBagBlocks() {
         // const [spacing, blockSize] = [globalConfig.spacing, globalConfig.blockSize]
         // const [maxW, maxH, defW, defH] = this.maxSize.concat(this.defalueSize)

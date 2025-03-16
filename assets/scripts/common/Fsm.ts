@@ -27,9 +27,9 @@ export class Transition {
     }
 
 }
-export class StateMachine {
+export class StateMachine<T> {
 
-    private owner: any
+    private owner: T
     private curState: IState
 
     private state2Transitions: Map<IState, Transition[]> = new Map()
@@ -38,7 +38,7 @@ export class StateMachine {
     private anyTransitions: Transition[] = []
     private emptyTransitions: Transition[] = []
 
-    constructor(owner: any) {
+    constructor(owner: T) {
         this.owner = owner
     }
 
@@ -116,7 +116,7 @@ export class StateMachine {
         return null
     }
 
-    public reset(owner: any) {
+    public reset(owner: T) {
         if (this.curState) this.curState.onExit()
         this.owner = owner
         this.curState = null

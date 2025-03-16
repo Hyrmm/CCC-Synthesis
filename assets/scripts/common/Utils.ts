@@ -1,51 +1,31 @@
+export enum Direction {
+    LB = 1, // 左下
+    RT = 2, // 右上
+    R = 3,  // 右
+    T = 4,  // 上
+    LT = 5, // 左上
+    L = 6,  // 左
+    B = 7,  // 下
+    RB = 8  // 右下
+}
 
-type Point = { x: number; y: number };
-export default class Utils {
+export const getDirection = (currentPos: { x: number, y: number }, targetPos: { x: number, y: number }): Direction => {
 
-    static getClockwisePoints(points: Point[]): Point[] {
-        if (points.length < 3) return points.map(p => ({...p}));
-        
-        // 深拷贝点集
-        const pointsCopy = points.map(p => ({x: p.x, y: p.y}));
-        const n = pointsCopy.length;
-        
-        // 计算质心
-        const centroid = pointsCopy.reduce((acc, p) => {
-            acc.x += p.x;
-            acc.y += p.y;
-            return acc;
-        }, {x: 0, y: 0});
-        centroid.x /= n;
-        centroid.y /= n;
+    const dx = targetPos.x - currentPos.x;
+    const dy = targetPos.y - currentPos.y;
 
-        // 按极角顺时针排序并处理共线点
-        const sorted = pointsCopy.sort((a, b) => {
-            // 计算极角
-            const angleA = Math.atan2(a.y - centroid.y, a.x - centroid.x);
-            const angleB = Math.atan2(b.y - centroid.y, b.x - centroid.x);
-            
-            // 主排序：按顺时针方向（角度从大到小）
-            if (angleA !== angleB) return angleB - angleA;
-            
-            // 处理共线点：使用叉积确定顺序
-            const cross = (a.x - centroid.x) * (b.y - centroid.y) 
-                        - (a.y - centroid.y) * (b.x - centroid.x);
-            if (cross !== 0) return cross > 0 ? -1 : 1;
-            
-            // 相同方向按距离排序
-            const distA = (a.x - centroid.x)**2 + (a.y - centroid.y)**2;
-            const distB = (b.x - centroid.x)**2 + (b.y - centroid.y)**2;
-            return distB - distA;
-        });
+    let angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
-        // 创建闭合多边形（添加首点作为终点）
-        const result = sorted.map(p => ({...p}));
-        const first = result[0];
-        const last = result[result.length-1];
-        if (first.x !== last.x || first.y !== last.y) {
-            result.push({...first});
-        }
+    if (angle < 0) angle += 360;
 
-        return result;
-    }
+    if (angle >= 337.5 || angle < 22.5) return Direction.R;   // 右
+    if (angle >= 22.5 && angle < 67.5) return Direction.RT;  // 右上
+    if (angle >= 67.5 && angle < 112.5) return Direction.T;  // 上
+    if (angle >= 112.5 && angle < 157.5) return Direction.LT; // 左上
+    if (angle >= 157.5 && angle < 202.5) return Direction.L;  // 左
+    if (angle >= 202.5 && angle < 247.5) return Direction.LB; // 左下
+    if (angle >= 247.5 && angle < 292.5) return Direction.B;  // 下
+    if (angle >= 292.5 && angle < 337.5) return Direction.RB; // 右下
+
+    return Direction.R
 }
